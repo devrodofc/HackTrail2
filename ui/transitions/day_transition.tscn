@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://45ga0hvgcmep"]
+
+[ext_resource type="Script" uid="uid://dvwiqiy557rbo" path="res://ui/transitions/day_transition.gd" id="1_7de5w"]
+
+[sub_resource type="Animation" id="Animation_pcqbp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/DayLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7de5w"]
+resource_name = "fade"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/DayLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0009999999, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oymrj"]
+_data = {
+&"RESET": SubResource("Animation_pcqbp"),
+&"fade": SubResource("Animation_7de5w")
+}
+
+[node name="DayTransition" type="Control" unique_id=589986384]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7de5w")
+
+[node name="Background" type="ColorRect" parent="." unique_id=2041812370]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1825969684]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DayLabel" type="Label" parent="CenterContainer" unique_id=277984798]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0.4, 1)
+theme_override_font_sizes/font_size = 150
+text = "Dia 1"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1459072038]
+libraries/ = SubResource("AnimationLibrary_oymrj")
