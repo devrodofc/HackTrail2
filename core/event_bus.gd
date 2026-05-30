@@ -15,3 +15,4 @@ signal hack_prevented(success: bool)
 
 # UI e Diálogos
 signal dialogue_requested(dialogue_id: String)
+signal dialogue_finished
