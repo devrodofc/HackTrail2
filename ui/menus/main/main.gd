@@ -1,8 +1,8 @@
 extends Control
 
-@onready var play_button: Button = $MarginContainer/VBoxContainer/Control/TitleLabel/Spacer/VBoxContainer/PlayButton
-@onready var options_button: Button = $MarginContainer/VBoxContainer/Control/TitleLabel/Spacer/VBoxContainer/OptionsButton
-@onready var quit_button: Button = $MarginContainer/VBoxContainer/Control/TitleLabel/Spacer/VBoxContainer/QuitButton
+@onready var play_button: Button = $MarginContainer/VBoxContainer/Spacer/VBoxContainer/PlayButton
+@onready var options_button: Button = $MarginContainer/VBoxContainer/Spacer/VBoxContainer/OptionsButton
+@onready var quit_button: Button = $MarginContainer/VBoxContainer/Spacer/VBoxContainer/QuitButton
 
 func _ready() -> void:
 	# Foca no botão Jogar automaticamente para quem joga no teclado
@@ -22,8 +22,7 @@ func _on_play_button_pressed() -> void:
 	# get_tree().change_scene_to_file("res://gameplay/interrogation/intro.tscn")
 
 func _on_options_button_pressed() -> void:
-	print("Abrindo menu de opções...")
-	# Futuramente: Instanciar o menu de opções aqui
+	get_tree().change_scene_to_file("res://ui/menus/options/options.tscn")
 
 func _on_quit_button_pressed() -> void:
 	print("Saindo do sistema...")

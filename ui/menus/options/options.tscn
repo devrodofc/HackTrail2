@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://sntf57ohami7"]
+
+[ext_resource type="Script" uid="uid://b0fuaxcafqyop" path="res://ui/menus/options/options.gd" id="1_2oi6d"]
+[ext_resource type="Texture2D" uid="uid://dg2o8kdxb4mqh" path="res://assets/sprites/props/computador4.png" id="3_jtp40"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2oi6d"]
+
+[node name="OptionsMenu" type="Control" unique_id=1961620024]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2oi6d")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1956681027]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_jtp40")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1218600158]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_bottom = 120
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=736543570]
+layout_mode = 2
+alignment = 2
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer" unique_id=221086794]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer/Spacer" unique_id=975364579]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -303.0
+offset_top = -396.0
+offset_right = 164.0
+offset_bottom = -306.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 65
+text = "MENU OPÇÕES"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=246973437]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Control" unique_id=206985256]
+layout_mode = 0
+offset_left = 270.0
+offset_top = -297.0
+offset_right = 741.0
+offset_bottom = -248.0
+theme_override_constants/separation = 25
+
+[node name="VolumeLabel" type="Label" parent="MarginContainer/VBoxContainer/Control/HBoxContainer" unique_id=1880669118]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "VOLUME"
+metadata/_edit_lock_ = true
+
+[node name="VolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/Control/HBoxContainer" unique_id=1094391365]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="Spacer2" type="Control" parent="MarginContainer/VBoxContainer" unique_id=588444442]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Spacer2" unique_id=1452272811]
+layout_mode = 0
+offset_left = 411.0
+offset_top = -244.0
+offset_right = 632.0
+offset_bottom = -65.0
+
+[node name="FullscreenButton" type="Button" parent="MarginContainer/VBoxContainer/Spacer2/VBoxContainer" unique_id=935421307]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_focus_color = Color(1.2273341e-06, 0.37668496, 0.40217566, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.9411765, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0.3764706, 0.40392157, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.9411765, 1, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2oi6d")
+text = "TELA CHEIA"
+flat = true
+metadata/_edit_lock_ = true
+
+[node name="CreditsButton" type="Button" parent="MarginContainer/VBoxContainer/Spacer2/VBoxContainer" unique_id=1733372069]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_focus_color = Color(1.2273341e-06, 0.37668496, 0.40217566, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.9411765, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0.3764706, 0.40392157, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.9411765, 1, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2oi6d")
+text = "CRÉDITOS"
+flat = true
+metadata/_edit_lock_ = true
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/Spacer2/VBoxContainer" unique_id=1580104235]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_focus_color = Color(1.2273341e-06, 0.37668496, 0.40217566, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.9411765, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0.3764706, 0.40392157, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.9411765, 1, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2oi6d")
+text = "VOLTAR"
+flat = true
+metadata/_edit_lock_ = true
