@@ -12,14 +12,11 @@ func _ready() -> void:
 	play_button.pressed.connect(_on_play_button_pressed)
 	options_button.pressed.connect(_on_options_button_pressed)
 	quit_button.pressed.connect(_on_quit_button_pressed)
-
-func _on_play_button_pressed() -> void:
-	print("Iniciando Hacktrail...")
-	# Aqui dizemos ao GameManager que o jogo vai começar!
-	GameManager.start_game()
 	
-	# Futuramente: carregar a cena do primeiro dia ou da introdução
-	# get_tree().change_scene_to_file("res://gameplay/interrogation/intro.tscn")
+func _on_play_button_pressed() -> void:
+	# Instancie ou certifique-se que a DialogueBox está ativa na cena para ouvir o sinal
+	EventBus.dialogue_requested.emit("intro_tutorial_professor")
+	print("oioi")
 
 func _on_options_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://ui/menus/options/options.tscn")
