@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://b0fuaxcafqyop" path="res://ui/menus/options/options.gd" id="1_2oi6d"]
 [ext_resource type="Texture2D" uid="uid://dg2o8kdxb4mqh" path="res://assets/sprites/props/computador4.png" id="3_jtp40"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2oi6d"]
+
 [node name="OptionsMenu" type="Control" unique_id=1961620024]
 layout_mode = 3
 anchors_preset = 15
@@ -95,18 +97,6 @@ offset_top = -244.0
 offset_right = 632.0
 offset_bottom = -65.0
 
-[node name="CreditsButton" type="Button" parent="MarginContainer/VBoxContainer/Spacer2/VBoxContainer" unique_id=1733372069]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-theme_override_colors/font_focus_color = Color(1.2273341e-06, 0.37668496, 0.40217566, 1)
-theme_override_colors/font_pressed_color = Color(0, 0.9411765, 1, 1)
-theme_override_colors/font_hover_color = Color(0, 0.3764706, 0.40392157, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0.9411765, 1, 1)
-theme_override_font_sizes/font_size = 35
-text = "CRÉDITOS"
-flat = true
-metadata/_edit_lock_ = true
-
 [node name="FullscreenButton" type="Button" parent="MarginContainer/VBoxContainer/Spacer2/VBoxContainer" unique_id=935421307]
 layout_mode = 2
 mouse_default_cursor_shape = 2
@@ -115,7 +105,21 @@ theme_override_colors/font_pressed_color = Color(0, 0.9411765, 1, 1)
 theme_override_colors/font_hover_color = Color(0, 0.3764706, 0.40392157, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0.9411765, 1, 1)
 theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2oi6d")
 text = "TELA CHEIA"
+flat = true
+metadata/_edit_lock_ = true
+
+[node name="CreditsButton" type="Button" parent="MarginContainer/VBoxContainer/Spacer2/VBoxContainer" unique_id=1733372069]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_focus_color = Color(1.2273341e-06, 0.37668496, 0.40217566, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.9411765, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0.3764706, 0.40392157, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.9411765, 1, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2oi6d")
+text = "CRÉDITOS"
 flat = true
 metadata/_edit_lock_ = true
 
@@ -127,6 +131,7 @@ theme_override_colors/font_pressed_color = Color(0, 0.9411765, 1, 1)
 theme_override_colors/font_hover_color = Color(0, 0.3764706, 0.40392157, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0.9411765, 1, 1)
 theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2oi6d")
 text = "VOLTAR"
 flat = true
 metadata/_edit_lock_ = true

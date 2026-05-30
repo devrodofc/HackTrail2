@@ -37,11 +37,9 @@ func _on_fullscreen_pressed() -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-
+	
 func _on_credits_pressed() -> void:
-	print("Abrindo créditos...")
-	# Futuramente: carregar a cena de créditos
-
+	get_tree().change_scene_to_file("res://ui/menus/credits/credits.tscn")
+	
 func _on_back_pressed() -> void:
-	# Volta para o menu principal
 	get_tree().change_scene_to_file("res://ui/menus/main/main.tscn")
