@@ -14,9 +14,15 @@ config/name="HackTrail2"
 run/main_scene="uid://b17pe6151kvt6"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[autoload]
+
+EventBus="*uid://bjaxv2enyu3u4"
+GameManager="*uid://dordnst2qk48e"
+
 [display]
 
 window/size/viewport_width=1280
+window/size/viewport_height=720
 window/size/mode=3
 window/stretch/mode="canvas_items"
 
