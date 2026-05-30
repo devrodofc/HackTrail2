@@ -14,9 +14,9 @@ func _ready() -> void:
 	quit_button.pressed.connect(_on_quit_button_pressed)
 	
 func _on_play_button_pressed() -> void:
-	# Instancie ou certifique-se que a DialogueBox está ativa na cena para ouvir o sinal
-	EventBus.dialogue_requested.emit("intro_tutorial_professor")
-	print("oioi")
+	# Dizemos ao sistema que o jogo começou (isso seta o current_day para 1)
+	GameManager.start_game() 
+	get_tree().change_scene_to_file("res://ui/transitions/day_transition.tscn")
 
 func _on_options_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://ui/menus/options/options.tscn")
