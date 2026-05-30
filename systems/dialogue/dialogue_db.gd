@@ -3,7 +3,7 @@ extends Node
 
 # Estrutura: "ID_DO_DIALOGO": [ { "name": "Quem fala", "text": "O que fala" }, ... ]
 const DATA: Dictionary = {
-	"intro_tutorial_professor": [
+	"intro_lore": [
 		{
 			"name": "Prof. Ronisson",
 			"text": "Bem-vindo ao laboratório de programação da Unifor. Hoje o dia será longo..."

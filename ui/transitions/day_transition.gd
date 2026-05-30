@@ -18,7 +18,4 @@ func _ready() -> void:
 
 func _on_animation_finished(anim_name: String) -> void:
 	if anim_name == "fade":
-		print("Transição concluída. Carregando o gameplay do Dia ", GameManager.current_day, "...")
-		
-		# AQUI VAMOS CARREGAR A CENA DO COMPUTADOR / LABORATÓRIO!
-		# get_tree().change_scene_to_file("res://gameplay/pc_interface/pc_main.tscn")
+		get_tree().change_scene_to_file("res://gameplay/interrogation/intro_lore.tscn")
