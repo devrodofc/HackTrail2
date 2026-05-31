@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://p0rg2p7mmgii"]
+
+[ext_resource type="FontFile" uid="uid://labbllem6v7s" path="res://assets/fonts/Terminal F4.ttf" id="1_y8kyr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_raq27"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="PcGameplay" type="Control" unique_id=2083086490]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OSWindow" type="PanelContainer" parent="." unique_id=507096231]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_raq27")
+
+[node name="MarginContainer" type="MarginContainer" parent="OSWindow" unique_id=2066407666]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="MainLayout" type="VBoxContainer" parent="OSWindow/MarginContainer" unique_id=1051309284]
+layout_mode = 2
+
+[node name="HeaderSection" type="HBoxContainer" parent="OSWindow/MarginContainer/MainLayout" unique_id=671596974]
+layout_mode = 2
+
+[node name="TaskProgressLabel" type="Label" parent="OSWindow/MarginContainer/MainLayout/HeaderSection" unique_id=124089197]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0.4, 1)
+theme_override_fonts/font = ExtResource("1_y8kyr")
+theme_override_font_sizes/font_size = 40
+text = "Tarefa 1/5"
+
+[node name="CodeSplitter" type="HBoxContainer" parent="OSWindow/MarginContainer/MainLayout" unique_id=1540298244]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 40
+
+[node name="ReferenceBox" type="VBoxContainer" parent="OSWindow/MarginContainer/MainLayout/CodeSplitter" unique_id=1811095514]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RefTitle" type="Label" parent="OSWindow/MarginContainer/MainLayout/CodeSplitter/ReferenceBox" unique_id=991558817]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0.4, 1)
+theme_override_fonts/font = ExtResource("1_y8kyr")
+theme_override_font_sizes/font_size = 40
+text = "GABARITO"
+
+[node name="RefCodeBox" type="RichTextLabel" parent="OSWindow/MarginContainer/MainLayout/CodeSplitter/ReferenceBox" unique_id=1957078766]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("1_y8kyr")
+
+[node name="StudentBox" type="VBoxContainer" parent="OSWindow/MarginContainer/MainLayout/CodeSplitter" unique_id=1445468515]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StudentTitle" type="Label" parent="OSWindow/MarginContainer/MainLayout/CodeSplitter/StudentBox" unique_id=1134084728]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0.4, 1)
+theme_override_fonts/font = ExtResource("1_y8kyr")
+theme_override_font_sizes/font_size = 40
+text = "CÓDIGO ANALISADO"
+
+[node name="StudentCodeBox" type="RichTextLabel" parent="OSWindow/MarginContainer/MainLayout/CodeSplitter/StudentBox" unique_id=693677644]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("1_y8kyr")
+
+[node name="ActionButtons" type="HBoxContainer" parent="OSWindow/MarginContainer/MainLayout" unique_id=1472191772]
+layout_mode = 2
+
+[node name="ApproveButton" type="TextureButton" parent="OSWindow/MarginContainer/MainLayout/ActionButtons" unique_id=1723669363]
+layout_mode = 2
+
+[node name="RejectButton" type="TextureButton" parent="OSWindow/MarginContainer/MainLayout/ActionButtons" unique_id=409723711]
+layout_mode = 2
+
+[node name="HackButton" type="TextureButton" parent="OSWindow/MarginContainer/MainLayout/ActionButtons" unique_id=874630262]
+layout_mode = 2
