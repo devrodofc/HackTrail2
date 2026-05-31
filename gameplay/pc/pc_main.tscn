@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://cr473pm14mro3"]
+
+[ext_resource type="Script" path="res://gameplay/pc_interface/pc_main.gd" id="1_cjxhv"]
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/background-unifor.png" id="2_rwyob"]
+[ext_resource type="Texture2D" path="res://assets/sprites/props/monitor.png" id="3_bsrlg"]
+[ext_resource type="Texture2D" path="res://assets/sprites/ui/buttons/botao_recusar.png" id="4_qsrdp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gm7sf"]
+atlas = ExtResource("4_qsrdp")
+region = Rect2(48, 106, 158, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkqw1"]
+atlas = ExtResource("4_qsrdp")
+region = Rect2(470, 106, 158, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbscg"]
+atlas = ExtResource("4_qsrdp")
+region = Rect2(259, 107, 158, 155)
+
+[node name="PcMain" type="Node2D" unique_id=1554644447]
+script = ExtResource("1_cjxhv")
+
+[node name="Background" type="TextureRect" parent="." unique_id=2140930053]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rwyob")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Monitor" type="Sprite2D" parent="." unique_id=2123656349]
+position = Vector2(281, 124)
+scale = Vector2(0.725586, 0.55859375)
+texture = ExtResource("3_bsrlg")
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1682259525]
+offset = Vector2(640, 360)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1349583090]
+
+[node name="InteractionArea" type="Control" parent="CanvasLayer" unique_id=483850304]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StartButton" type="TextureButton" parent="CanvasLayer/InteractionArea" unique_id=544018434]
+layout_mode = 0
+offset_left = 852.0
+offset_top = 411.0
+offset_right = 1010.0
+offset_bottom = 567.0
+scale = Vector2(0.2, 0.2)
+texture_normal = SubResource("AtlasTexture_gm7sf")
+texture_pressed = SubResource("AtlasTexture_nkqw1")
+texture_hover = SubResource("AtlasTexture_hbscg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1901363403]
+
+[connection signal="pressed" from="CanvasLayer/InteractionArea/StartButton" to="." method="_on_start_button_pressed"]
