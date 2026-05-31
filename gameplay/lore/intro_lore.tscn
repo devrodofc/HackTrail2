@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bfaf1bj15dx55"]
 
-[ext_resource type="Script" uid="uid://dunu1ladwe6sx" path="res://gameplay/interrogation/intro_lore.gd" id="1_2dqi6"]
+[ext_resource type="Script" uid="uid://dunu1ladwe6sx" path="res://gameplay/lore/intro_lore.gd" id="1_2dqi6"]
 [ext_resource type="Texture2D" uid="uid://cuqfieyu4lgln" path="res://assets/sprites/backgrounds/fundo_escola.png" id="2_dflyh"]
 [ext_resource type="Texture2D" uid="uid://rq7goamo5x40" path="res://assets/sprites/npcs/ronisson/ronisson2.png" id="3_wafk0"]
 
