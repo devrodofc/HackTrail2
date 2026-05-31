@@ -22,6 +22,12 @@ const DATA: Dictionary = {
 			"name": "Lorrân",
 			"text": "Eu? Professor, eu passei a noite inteira atualizando o SSD, juro!"
 		}
+	],
+	"tutorial_pc": [
+		{
+			"name": "Prof. Ronisson",
+			"text": "Bem vindo à sala de aula, aqui lhe ensinarei a analisar os códigos dos alunos"
+		}
 	]
 }
 
