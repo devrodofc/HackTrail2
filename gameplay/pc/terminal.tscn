@@ -92,7 +92,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 1, 0.4, 1)
 theme_override_fonts/font = ExtResource("1_y8kyr")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 20
 text = "Tarefa 1/5"
 
 [node name="CodeSplitter" type="HBoxContainer" parent="OSWindow/MarginContainer/MainLayout" unique_id=1540298244]
@@ -108,7 +108,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 1, 0.4, 1)
 theme_override_fonts/font = ExtResource("1_y8kyr")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 20
 text = "GABARITO"
 
 [node name="RefCodeBox" type="RichTextLabel" parent="OSWindow/MarginContainer/MainLayout/CodeSplitter/ReferenceBox" unique_id=1957078766]
@@ -124,7 +124,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 1, 0.4, 1)
 theme_override_fonts/font = ExtResource("1_y8kyr")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 20
 text = "CÓDIGO ANALISADO"
 
 [node name="StudentCodeBox" type="RichTextLabel" parent="OSWindow/MarginContainer/MainLayout/CodeSplitter/StudentBox" unique_id=693677644]
@@ -134,6 +134,7 @@ theme_override_fonts/normal_font = ExtResource("1_y8kyr")
 
 [node name="ActionButtons" type="HBoxContainer" parent="OSWindow/MarginContainer/MainLayout" unique_id=1472191772]
 layout_mode = 2
+alignment = 2
 
 [node name="ApproveButton" type="TextureButton" parent="OSWindow/MarginContainer/MainLayout/ActionButtons" unique_id=1723669363]
 custom_minimum_size = Vector2(100, 80)

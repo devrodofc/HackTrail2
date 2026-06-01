@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://duobk20haclwr" path="res://gameplay/pc/pc_main.gd" id="1_cjxhv"]
 [ext_resource type="Texture2D" uid="uid://chsk3efnhq7r2" path="res://assets/sprites/backgrounds/background-unifor.png" id="2_rwyob"]
 [ext_resource type="Texture2D" uid="uid://c3xorm81c7t14" path="res://assets/sprites/props/monitor.png" id="3_bsrlg"]
-[ext_resource type="PackedScene" uid="uid://p0rg2p7mmgii" path="res://gameplay/pc/terminal.tscn" id="3_rwyob"]
 [ext_resource type="Texture2D" uid="uid://kpv613jcm3y" path="res://assets/sprites/ui/buttons/botao_recusar.png" id="4_qsrdp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gm7sf"]
@@ -33,12 +32,18 @@ texture = ExtResource("2_rwyob")
 expand_mode = 1
 metadata/_edit_lock_ = true
 
-[node name="Terminal" parent="." unique_id=2083086490 instance=ExtResource("3_rwyob")]
-offset_left = 400.0
-offset_top = 248.0
-offset_right = 1388.0
-offset_bottom = 658.0
-scale = Vector2(0.5, 0.5)
+[node name="MonitorScreen" type="SubViewportContainer" parent="." unique_id=1473377892]
+visible = false
+offset_left = 408.0
+offset_top = 251.0
+offset_right = 888.0
+offset_bottom = 451.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="MonitorScreen" unique_id=164315810]
+handle_input_locally = false
+size = Vector2i(480, 200)
+render_target_update_mode = 0
 
 [node name="Monitor" type="Sprite2D" parent="." unique_id=2123656349]
 position = Vector2(281, 124)
