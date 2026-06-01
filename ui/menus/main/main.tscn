@@ -1,7 +1,17 @@
 [gd_scene format=3 uid="uid://b17pe6151kvt6"]
 
 [ext_resource type="Script" uid="uid://dd2cb2xie5w2t" path="res://ui/menus/main/main.gd" id="1_yvasb"]
+[ext_resource type="Texture2D" uid="uid://brq6lre3wx5ps" path="res://assets/sprites/ui/logo/Logo.png" id="3_3p6m0"]
 [ext_resource type="Texture2D" uid="uid://dg2o8kdxb4mqh" path="res://assets/sprites/props/computador4.png" id="3_72mpx"]
+[ext_resource type="Shader" uid="uid://c04m35to2tfu0" path="res://assets/shaders/crt_overlay.gdshader" id="3_gd5h0"]
+[ext_resource type="Script" uid="uid://c6yqap56iy138" path="res://ui/menus/main/logo_effect.gd" id="5_gd5h0"]
+[ext_resource type="FontFile" uid="uid://labbllem6v7s" path="res://assets/fonts/Terminal F4.ttf" id="6_d11k6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d11k6"]
+shader = ExtResource("3_gd5h0")
+shader_parameter/scanline_strength = 0.22000001045
+shader_parameter/flicker_strength = 0.0400000019
+shader_parameter/vignette_strength = 0.350000016625
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kqqty"]
 
@@ -24,6 +34,18 @@ grow_vertical = 2
 texture = ExtResource("3_72mpx")
 expand_mode = 1
 
+[node name="CRTOverlay" type="ColorRect" parent="." unique_id=2003368945]
+material = SubResource("ShaderMaterial_d11k6")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.016
+anchor_bottom = 0.056
+offset_left = 348.0
+offset_top = 131.0
+offset_right = 889.52
+offset_bottom = 458.68
+mouse_filter = 2
+
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1218600158]
 layout_mode = 1
 anchors_preset = 15
@@ -39,24 +61,25 @@ layout_mode = 2
 alignment = 2
 
 [node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=221086794]
+custom_minimum_size = Vector2(0, 140)
 layout_mode = 2
 
-[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer/Control" unique_id=975364579]
+[node name="LogoHacktrail" type="TextureRect" parent="MarginContainer/VBoxContainer/Control" unique_id=1450895269]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -275.0
-offset_top = -409.0
-offset_right = 157.0
-offset_bottom = -299.0
+offset_left = 271.0
+offset_top = -259.0
+offset_right = -389.0
+offset_bottom = -279.0
 grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 80
-text = "HACKTRAIL"
-horizontal_alignment = 1
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_3p6m0")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_gd5h0")
 
 [node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer" unique_id=588444442]
 custom_minimum_size = Vector2(0, 50)
@@ -64,18 +87,19 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Spacer" unique_id=1452272811]
 layout_mode = 0
-offset_left = 415.0
-offset_top = -302.0
-offset_right = 620.0
-offset_bottom = -63.0
+offset_left = 439.0
+offset_top = -274.0
+offset_right = 609.0
+offset_bottom = -77.0
 
 [node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer/Spacer/VBoxContainer" unique_id=1105773324]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme_override_colors/font_focus_color = Color(1.2273341e-06, 0.37668496, 0.40217566, 1)
-theme_override_colors/font_pressed_color = Color(0, 0.9411765, 1, 1)
-theme_override_colors/font_hover_color = Color(0, 0.3764706, 0.40392157, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0.9411765, 1, 1)
+theme_override_colors/font_focus_color = Color(0.11764706, 0.39607844, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 0.4, 1)
+theme_override_colors/font_hover_color = Color(0.11764706, 0.39607844, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 1, 0.4, 1)
+theme_override_fonts/font = ExtResource("6_d11k6")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxEmpty_kqqty")
 text = "JOGAR"
@@ -85,10 +109,11 @@ metadata/_edit_lock_ = true
 [node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer/Spacer/VBoxContainer" unique_id=1733372069]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme_override_colors/font_focus_color = Color(1.2273341e-06, 0.37668496, 0.40217566, 1)
-theme_override_colors/font_pressed_color = Color(0, 0.9411765, 1, 1)
-theme_override_colors/font_hover_color = Color(0, 0.3764706, 0.40392157, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0.9411765, 1, 1)
+theme_override_colors/font_focus_color = Color(0.11764706, 0.39607844, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 0.4, 1)
+theme_override_colors/font_hover_color = Color(0.11764706, 0.39607844, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 1, 0.4, 1)
+theme_override_fonts/font = ExtResource("6_d11k6")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxEmpty_kqqty")
 text = "OPÇÕES"
@@ -98,10 +123,11 @@ metadata/_edit_lock_ = true
 [node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer/Spacer/VBoxContainer" unique_id=1580104235]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme_override_colors/font_focus_color = Color(1.2273341e-06, 0.37668496, 0.40217566, 1)
-theme_override_colors/font_pressed_color = Color(0, 0.9411765, 1, 1)
-theme_override_colors/font_hover_color = Color(0, 0.3764706, 0.40392157, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0.9411765, 1, 1)
+theme_override_colors/font_focus_color = Color(0.11764706, 0.39607844, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 0.4, 1)
+theme_override_colors/font_hover_color = Color(0.11764706, 0.39607844, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 1, 0.4, 1)
+theme_override_fonts/font = ExtResource("6_d11k6")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxEmpty_kqqty")
 text = "SAIR"

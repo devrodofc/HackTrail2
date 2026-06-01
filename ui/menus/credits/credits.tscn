@@ -2,6 +2,14 @@
 
 [ext_resource type="Script" uid="uid://bjvvcssdmppal" path="res://ui/menus/credits/credits.gd" id="1_h1tht"]
 [ext_resource type="Texture2D" uid="uid://dg2o8kdxb4mqh" path="res://assets/sprites/props/computador4.png" id="2_xxakf"]
+[ext_resource type="Shader" uid="uid://c04m35to2tfu0" path="res://assets/shaders/crt_overlay.gdshader" id="3_4dwoy"]
+[ext_resource type="FontFile" uid="uid://labbllem6v7s" path="res://assets/fonts/Terminal F4.ttf" id="4_r16d8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r16d8"]
+shader = ExtResource("3_4dwoy")
+shader_parameter/scanline_strength = 0.16
+shader_parameter/flicker_strength = 0.03
+shader_parameter/vignette_strength = 0.28
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h1tht"]
 
@@ -24,11 +32,24 @@ grow_vertical = 2
 texture = ExtResource("2_xxakf")
 expand_mode = 1
 
+[node name="CRTOverlay" type="ColorRect" parent="." unique_id=501263437]
+material = SubResource("ShaderMaterial_r16d8")
+layout_mode = 0
+offset_left = 362.0
+offset_top = 150.0
+offset_right = 915.0
+offset_bottom = 498.0
+mouse_filter = 2
+
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1218600158]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_left = -0.089
+anchor_top = 0.075
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 113.92
+offset_top = -54.000004
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 120
@@ -52,16 +73,21 @@ custom_minimum_size = Vector2(0, 350)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
+theme_override_fonts/normal_font = ExtResource("4_r16d8")
+theme_override_fonts/bold_font = ExtResource("4_r16d8")
+theme_override_fonts/bold_italics_font = ExtResource("4_r16d8")
+theme_override_fonts/italics_font = ExtResource("4_r16d8")
+theme_override_fonts/mono_font = ExtResource("4_r16d8")
 bbcode_enabled = true
 text = "[center]
 [b]HACKTRAIL[/b]
 
-[color=#00ff66]Desenvolvido por:[/color]
+[color=#00C8E8]Desenvolvido por:[/color]
 Rodrigo Herrmann
 João Guilherme Mapurunga
 Lorrân Brito da Silva
 
-[color=#00ff66]Programação:[/color]
+[color=#00C8E8]Programação:[/color]
 Rodrigo Herrmann
 "
 horizontal_alignment = 1
@@ -73,12 +99,17 @@ custom_minimum_size = Vector2(0, 350)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
+theme_override_fonts/normal_font = ExtResource("4_r16d8")
+theme_override_fonts/bold_font = ExtResource("4_r16d8")
+theme_override_fonts/bold_italics_font = ExtResource("4_r16d8")
+theme_override_fonts/italics_font = ExtResource("4_r16d8")
+theme_override_fonts/mono_font = ExtResource("4_r16d8")
 bbcode_enabled = true
 text = "
-[color=#00ff66]Game Design:[/color]
+[color=#00C8E8]Game Design:[/color]
 Lorrân Brito da Silva
 
-[color=#00ff66]Arte e Áudio:[/color]
+[color=#00C8E8]Arte e Áudio:[/color]
 João Guilherme Mapurunga
 
 [i]Obrigado por jogar![/i]"
@@ -101,11 +132,12 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -220.0
-offset_top = -469.0
+offset_top = -444.0
 offset_right = 90.0
-offset_bottom = -379.0
+offset_bottom = -354.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_r16d8")
 theme_override_font_sizes/font_size = 60
 text = "CRÉDITOS"
 horizontal_alignment = 1
@@ -113,14 +145,16 @@ horizontal_alignment = 1
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/FreeMove" unique_id=1580104235]
 layout_mode = 0
 offset_left = 410.0
-offset_top = -174.0
+offset_top = -190.0
 offset_right = 609.0
-offset_bottom = -97.0
+offset_bottom = -113.0
 mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.9490196, 0.95686275, 0.972549, 1)
 theme_override_colors/font_focus_color = Color(1.2273341e-06, 0.37668496, 0.40217566, 1)
 theme_override_colors/font_pressed_color = Color(0, 0.9411765, 1, 1)
 theme_override_colors/font_hover_color = Color(0, 0.3764706, 0.40392157, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0.9411765, 1, 1)
+theme_override_fonts/font = ExtResource("4_r16d8")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_h1tht")
 text = "VOLTAR"

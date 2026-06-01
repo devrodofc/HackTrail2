@@ -2,8 +2,32 @@
 
 [ext_resource type="Script" uid="uid://b0fuaxcafqyop" path="res://ui/menus/options/options.gd" id="1_2oi6d"]
 [ext_resource type="Texture2D" uid="uid://dg2o8kdxb4mqh" path="res://assets/sprites/props/computador4.png" id="3_jtp40"]
+[ext_resource type="Shader" uid="uid://c04m35to2tfu0" path="res://assets/shaders/crt_overlay.gdshader" id="3_y8nl3"]
+[ext_resource type="FontFile" uid="uid://labbllem6v7s" path="res://assets/fonts/Terminal F4.ttf" id="4_regm7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_regm7"]
+shader = ExtResource("3_y8nl3")
+shader_parameter/scanline_strength = 0.16
+shader_parameter/flicker_strength = 0.03
+shader_parameter/vignette_strength = 0.28
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7lgkk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eu2tq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iitc2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2oi6d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nkj1m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7k2ip"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oxqh7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_chrnc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aec4r"]
 
 [node name="OptionsMenu" type="Control" unique_id=1961620024]
 layout_mode = 3
@@ -24,6 +48,14 @@ grow_vertical = 2
 texture = ExtResource("3_jtp40")
 expand_mode = 1
 
+[node name="CRTOverlay" type="ColorRect" parent="." unique_id=805482911]
+material = SubResource("ShaderMaterial_regm7")
+layout_mode = 0
+offset_left = 336.0
+offset_top = 133.0
+offset_right = 919.0
+offset_bottom = 484.0
+
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1218600158]
 layout_mode = 1
 anchors_preset = 15
@@ -33,10 +65,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 120
 theme_override_constants/margin_bottom = 120
+metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=736543570]
 layout_mode = 2
 alignment = 2
+metadata/_edit_lock_ = true
 
 [node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer" unique_id=221086794]
 layout_mode = 2
@@ -50,13 +84,15 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -303.0
-offset_top = -396.0
+offset_top = -381.0
 offset_right = 164.0
-offset_bottom = -306.0
+offset_bottom = -291.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(0.9490196, 0.95686275, 0.972549, 1)
+theme_override_fonts/font = ExtResource("4_regm7")
 theme_override_font_sizes/font_size = 65
-text = "MENU OPÇÕES"
+text = "OPÇÕES"
 horizontal_alignment = 1
 
 [node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=246973437]
@@ -72,6 +108,8 @@ theme_override_constants/separation = 25
 
 [node name="VolumeLabel" type="Label" parent="MarginContainer/VBoxContainer/Control/HBoxContainer" unique_id=1880669118]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9490196, 0.95686275, 0.972549, 1)
+theme_override_fonts/font = ExtResource("4_regm7")
 theme_override_font_sizes/font_size = 35
 text = "VOLUME"
 metadata/_edit_lock_ = true
@@ -92,19 +130,25 @@ metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Spacer2" unique_id=1452272811]
 layout_mode = 0
-offset_left = 411.0
-offset_top = -244.0
-offset_right = 632.0
-offset_bottom = -65.0
+offset_left = 416.0
+offset_top = -224.0
+offset_right = 605.0
+offset_bottom = -99.0
 
 [node name="FullscreenButton" type="Button" parent="MarginContainer/VBoxContainer/Spacer2/VBoxContainer" unique_id=935421307]
 layout_mode = 2
+focus_mode = 0
 mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.9490196, 0.95686275, 0.972549, 1)
 theme_override_colors/font_focus_color = Color(1.2273341e-06, 0.37668496, 0.40217566, 1)
-theme_override_colors/font_pressed_color = Color(0, 0.9411765, 1, 1)
-theme_override_colors/font_hover_color = Color(0, 0.3764706, 0.40392157, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.16862746, 0.8392157, 1)
+theme_override_colors/font_hover_color = Color(0, 0.78431374, 0.9098039, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0.9411765, 1, 1)
+theme_override_fonts/font = ExtResource("4_regm7")
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7lgkk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eu2tq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iitc2")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2oi6d")
 text = "TELA CHEIA"
 flat = true
@@ -112,12 +156,18 @@ metadata/_edit_lock_ = true
 
 [node name="CreditsButton" type="Button" parent="MarginContainer/VBoxContainer/Spacer2/VBoxContainer" unique_id=1733372069]
 layout_mode = 2
+focus_mode = 0
 mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.9490196, 0.95686275, 0.972549, 1)
 theme_override_colors/font_focus_color = Color(1.2273341e-06, 0.37668496, 0.40217566, 1)
-theme_override_colors/font_pressed_color = Color(0, 0.9411765, 1, 1)
-theme_override_colors/font_hover_color = Color(0, 0.3764706, 0.40392157, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.16862746, 0.8392157, 1)
+theme_override_colors/font_hover_color = Color(0, 0.78431374, 0.9098039, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0.9411765, 1, 1)
+theme_override_fonts/font = ExtResource("4_regm7")
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nkj1m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7k2ip")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oxqh7")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2oi6d")
 text = "CRÉDITOS"
 flat = true
@@ -125,12 +175,16 @@ metadata/_edit_lock_ = true
 
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/Spacer2/VBoxContainer" unique_id=1580104235]
 layout_mode = 2
+focus_mode = 0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_focus_color = Color(1.2273341e-06, 0.37668496, 0.40217566, 1)
 theme_override_colors/font_pressed_color = Color(0, 0.9411765, 1, 1)
 theme_override_colors/font_hover_color = Color(0, 0.3764706, 0.40392157, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0.9411765, 1, 1)
+theme_override_fonts/font = ExtResource("4_regm7")
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_chrnc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_aec4r")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2oi6d")
 text = "VOLTAR"
 flat = true
