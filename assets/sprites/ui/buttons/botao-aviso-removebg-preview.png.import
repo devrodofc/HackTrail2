@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de2ocmk08u53w"
-path="res://.godot/imported/botao-confirmar.png-0d74bed37be05f62f91c35b7a0d28225.ctex"
+uid="uid://bgqifi7mips4x"
+path="res://.godot/imported/botao-aviso-removebg-preview.png-8cf12ece06a0404ed0c458bfb3ad196f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ui/buttons/botao-confirmar.png"
-dest_files=["res://.godot/imported/botao-confirmar.png-0d74bed37be05f62f91c35b7a0d28225.ctex"]
+source_file="res://assets/sprites/ui/buttons/botao-aviso-removebg-preview.png"
+dest_files=["res://.godot/imported/botao-aviso-removebg-preview.png-8cf12ece06a0404ed0c458bfb3ad196f.ctex"]
 
 [params]
 

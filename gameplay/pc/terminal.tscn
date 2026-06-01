@@ -1,17 +1,70 @@
 [gd_scene format=3 uid="uid://p0rg2p7mmgii"]
 
+[ext_resource type="Script" uid="uid://d23omfeyvt2mp" path="res://gameplay/pc/terminal.gd" id="1_dcepl"]
 [ext_resource type="FontFile" uid="uid://labbllem6v7s" path="res://assets/fonts/Terminal F4.ttf" id="1_y8kyr"]
+[ext_resource type="Texture2D" uid="uid://hbhc6a4hrbrp" path="res://assets/sprites/ui/buttons/botao-confirmar-removebg-preview.png" id="2_gulhp"]
+[ext_resource type="Texture2D" uid="uid://0q3en673xp43" path="res://assets/sprites/ui/buttons/botao-rejeitar.png" id="3_g4qvb"]
+[ext_resource type="Texture2D" uid="uid://bgqifi7mips4x" path="res://assets/sprites/ui/buttons/botao-aviso-removebg-preview.png" id="4_4jior"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_raq27"]
 bg_color = Color(0, 0, 0, 1)
 
-[node name="PcGameplay" type="Control" unique_id=2083086490]
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4qvb"]
+atlas = ExtResource("2_gulhp")
+region = Rect2(25, 117, 131, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jior"]
+atlas = ExtResource("2_gulhp")
+region = Rect2(347, 113, 135, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcepl"]
+atlas = ExtResource("2_gulhp")
+region = Rect2(190, 114, 130, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fu2o"]
+atlas = ExtResource("2_gulhp")
+region = Rect2(508, 113, 136, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10nws"]
+atlas = ExtResource("3_g4qvb")
+region = Rect2(30, 120, 130, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urg2c"]
+atlas = ExtResource("3_g4qvb")
+region = Rect2(346, 118, 134, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsv6b"]
+atlas = ExtResource("3_g4qvb")
+region = Rect2(190, 120, 131, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50ean"]
+atlas = ExtResource("3_g4qvb")
+region = Rect2(507, 118, 135, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq5jx"]
+atlas = ExtResource("4_4jior")
+region = Rect2(36, 130, 127, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51g6m"]
+atlas = ExtResource("4_4jior")
+region = Rect2(343, 128, 128, 129)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vej0g"]
+atlas = ExtResource("4_4jior")
+region = Rect2(190, 128, 125, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ues0"]
+atlas = ExtResource("4_4jior")
+region = Rect2(502, 128, 128, 127)
+
+[node name="Terminal" type="Control" unique_id=2083086490]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dcepl")
 
 [node name="OSWindow" type="PanelContainer" parent="." unique_id=507096231]
 layout_mode = 1
@@ -83,10 +136,34 @@ theme_override_fonts/normal_font = ExtResource("1_y8kyr")
 layout_mode = 2
 
 [node name="ApproveButton" type="TextureButton" parent="OSWindow/MarginContainer/MainLayout/ActionButtons" unique_id=1723669363]
+custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_g4qvb")
+texture_pressed = SubResource("AtlasTexture_4jior")
+texture_hover = SubResource("AtlasTexture_dcepl")
+texture_disabled = SubResource("AtlasTexture_0fu2o")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="RejectButton" type="TextureButton" parent="OSWindow/MarginContainer/MainLayout/ActionButtons" unique_id=409723711]
+custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_10nws")
+texture_pressed = SubResource("AtlasTexture_urg2c")
+texture_hover = SubResource("AtlasTexture_vsv6b")
+texture_disabled = SubResource("AtlasTexture_50ean")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="HackButton" type="TextureButton" parent="OSWindow/MarginContainer/MainLayout/ActionButtons" unique_id=874630262]
+custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_kq5jx")
+texture_pressed = SubResource("AtlasTexture_51g6m")
+texture_hover = SubResource("AtlasTexture_vej0g")
+texture_disabled = SubResource("AtlasTexture_3ues0")
+ignore_texture_size = true
+stretch_mode = 5

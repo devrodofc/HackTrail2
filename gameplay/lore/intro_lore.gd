@@ -25,4 +25,4 @@ func _on_dialogue_finished() -> void:
 		EventBus.dialogue_finished.disconnect(_on_dialogue_finished)
 	
 	# Vai para a gameplay do PC
-	get_tree().change_scene_to_file("res://gameplay/pc_interface/pc_main.tscn")
+	get_tree().change_scene_to_file("res://gameplay/pc/pc_main.tscn")
