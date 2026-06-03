@@ -34,11 +34,11 @@ expand_mode = 1
 metadata/_edit_lock_ = true
 
 [node name="Terminal" parent="." unique_id=2083086490 instance=ExtResource("3_rwyob")]
-offset_left = 400.0
-offset_top = 248.0
-offset_right = 1388.0
-offset_bottom = 658.0
-scale = Vector2(0.5, 0.5)
+offset_left = 402.0
+offset_top = 243.0
+offset_right = 1639.4999
+offset_bottom = 770.49994
+scale = Vector2(0.4, 0.4)
 
 [node name="Monitor" type="Sprite2D" parent="." unique_id=2123656349]
 position = Vector2(281, 124)
