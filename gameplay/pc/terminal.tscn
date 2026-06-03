@@ -92,7 +92,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 1, 0.4, 1)
 theme_override_fonts/font = ExtResource("1_y8kyr")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 35
 text = "Tarefa 1/5"
 
 [node name="CodeSplitter" type="HBoxContainer" parent="OSWindow/MarginContainer/MainLayout" unique_id=1540298244]
@@ -103,37 +103,50 @@ theme_override_constants/separation = 40
 [node name="ReferenceBox" type="VBoxContainer" parent="OSWindow/MarginContainer/MainLayout/CodeSplitter" unique_id=1811095514]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 40
 
 [node name="RefTitle" type="Label" parent="OSWindow/MarginContainer/MainLayout/CodeSplitter/ReferenceBox" unique_id=991558817]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 1, 0.4, 1)
 theme_override_fonts/font = ExtResource("1_y8kyr")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 35
 text = "GABARITO"
 
 [node name="RefCodeBox" type="RichTextLabel" parent="OSWindow/MarginContainer/MainLayout/CodeSplitter/ReferenceBox" unique_id=1957078766]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("1_y8kyr")
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/bold_italics_font_size = 18
+theme_override_font_sizes/italics_font_size = 18
+theme_override_font_sizes/mono_font_size = 18
 
 [node name="StudentBox" type="VBoxContainer" parent="OSWindow/MarginContainer/MainLayout/CodeSplitter" unique_id=1445468515]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 40
 
 [node name="StudentTitle" type="Label" parent="OSWindow/MarginContainer/MainLayout/CodeSplitter/StudentBox" unique_id=1134084728]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 1, 0.4, 1)
 theme_override_fonts/font = ExtResource("1_y8kyr")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 35
 text = "CÓDIGO ANALISADO"
 
 [node name="StudentCodeBox" type="RichTextLabel" parent="OSWindow/MarginContainer/MainLayout/CodeSplitter/StudentBox" unique_id=693677644]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("1_y8kyr")
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/bold_italics_font_size = 18
+theme_override_font_sizes/italics_font_size = 18
+theme_override_font_sizes/mono_font_size = 18
 
 [node name="ActionButtons" type="HBoxContainer" parent="OSWindow/MarginContainer/MainLayout" unique_id=1472191772]
 layout_mode = 2
+alignment = 2
 
 [node name="ApproveButton" type="TextureButton" parent="OSWindow/MarginContainer/MainLayout/ActionButtons" unique_id=1723669363]
 custom_minimum_size = Vector2(100, 80)

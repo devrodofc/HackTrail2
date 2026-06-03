@@ -1,6 +1,8 @@
 extends Control
 
 # Referências visuais aos nós de texto e botões
+@onready var main_layout: VBoxContainer = $OSWindow/MarginContainer/MainLayout
+
 @onready var task_progress_label: Label = $OSWindow/MarginContainer/MainLayout/HeaderSection/TaskProgressLabel
 @onready var ref_code_box: RichTextLabel = $OSWindow/MarginContainer/MainLayout/CodeSplitter/ReferenceBox/RefCodeBox
 @onready var student_code_box: RichTextLabel = $OSWindow/MarginContainer/MainLayout/CodeSplitter/StudentBox/StudentCodeBox
@@ -9,27 +11,33 @@ extends Control
 @onready var reject_btn: TextureButton = $OSWindow/MarginContainer/MainLayout/ActionButtons/RejectButton
 @onready var hack_btn: TextureButton = $OSWindow/MarginContainer/MainLayout/ActionButtons/HackButton
 
+
 # Variáveis de controle da rodada
 var current_tasks: Array = []
 var current_task_index: int = 0
 var score_for_the_day: int = 0
-
 func _ready() -> void:
-	# Conecta os botões
+	# ESCONDE TUDO: Deixa a interface transparente, sobrando só o fundo preto
+	main_layout.modulate.a = 0.0 
+	
 	approve_btn.pressed.connect(_on_approve_pressed)
 	reject_btn.pressed.connect(_on_reject_pressed)
 	hack_btn.pressed.connect(_on_hack_pressed)
 	
-	# Pede as tarefas do dia atual ao nosso CodeDB
 	current_tasks = CodeDB.get_randomized_tasks(GameManager.current_day)
 	
-	# Inicia a tela
 	if current_tasks.size() > 0:
 		current_task_index = 0
 		score_for_the_day = 0
 		update_ui_with_task()
 	else:
-		print("ERRO: Nenhuma tarefa encontrada para o dia ", GameManager.current_day)
+		print("ERRO: Nenhuma tarefa encontrada")
+
+# --- NOVA FUNÇÃO DE BOOT ---
+func boot_system() -> void:
+	var tween = create_tween()
+	# Faz as letras e botões aparecerem suavemente (efeito de monitor ligando) em 1 segundo
+	tween.tween_property(main_layout, "modulate:a", 1.0, 1.0)
 
 # --- ATUALIZAÇÃO DA TELA ---
 
