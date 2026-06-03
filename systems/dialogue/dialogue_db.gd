@@ -28,6 +28,26 @@ const DATA: Dictionary = {
 			"name": "Prof. Ronisson",
 			"text": "Bem vindo à sala de aula, aqui lhe ensinarei a analisar os códigos dos alunos"
 		}
+	],
+	"time_out_pc": [
+		{
+			"name": "Professor Ronisson",
+			"text": "BIP... BIP... Bloqueio de segurança ativado! Seu tempo de expediente no terminal esgotou."
+		},
+		{
+			"name": "Professor Ronisson",
+			"text": "Precisamos ir para a próxima fase da investigação. Saia do computador e venha falar comigo na sala de interrogatórios imediatamente."
+		}
+	],
+	"day_finished_pc": [
+		{
+			"name": "Professor Ronisson",
+			"text": "Excelente trabalho analisando os dados dos alunos, sua cota do dia foi batida com sucesso."
+		},
+		{
+			"name": "Professor Ronisson",
+			"text": "O terminal foi encriptado. Vamos para a próxima fase. É hora de descobrir quem plantou esses códigos maliciosos."
+		}
 	]
 }
 

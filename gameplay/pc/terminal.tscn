@@ -93,7 +93,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 1, 0.4, 1)
 theme_override_fonts/font = ExtResource("1_y8kyr")
 theme_override_font_sizes/font_size = 35
-text = "Tarefa 1/5"
+text = "ANÁLISE: 1/6 | TEMPO: 59s"
 
 [node name="CodeSplitter" type="HBoxContainer" parent="OSWindow/MarginContainer/MainLayout" unique_id=1540298244]
 layout_mode = 2

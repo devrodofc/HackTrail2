@@ -4,19 +4,23 @@
 [ext_resource type="Texture2D" uid="uid://chsk3efnhq7r2" path="res://assets/sprites/backgrounds/background-unifor.png" id="2_rwyob"]
 [ext_resource type="Texture2D" uid="uid://c3xorm81c7t14" path="res://assets/sprites/props/monitor.png" id="3_bsrlg"]
 [ext_resource type="PackedScene" uid="uid://p0rg2p7mmgii" path="res://gameplay/pc/terminal.tscn" id="3_rwyob"]
-[ext_resource type="Texture2D" uid="uid://kpv613jcm3y" path="res://assets/sprites/ui/buttons/botao_recusar.png" id="4_qsrdp"]
+[ext_resource type="Texture2D" uid="uid://bucjwwqpuibpb" path="res://assets/sprites/ui/buttons/botao-power-removebg-preview.png" id="5_rwyob"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gm7sf"]
-atlas = ExtResource("4_qsrdp")
-region = Rect2(48, 106, 158, 156)
+atlas = ExtResource("5_rwyob")
+region = Rect2(43, 120, 130, 133)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nkqw1"]
-atlas = ExtResource("4_qsrdp")
-region = Rect2(470, 106, 158, 156)
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsrlg"]
+atlas = ExtResource("5_rwyob")
+region = Rect2(341, 121, 128, 132)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hbscg"]
-atlas = ExtResource("4_qsrdp")
-region = Rect2(259, 107, 158, 155)
+atlas = ExtResource("5_rwyob")
+region = Rect2(193, 121, 129, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsrdp"]
+atlas = ExtResource("5_rwyob")
+region = Rect2(489, 121, 128, 132)
 
 [node name="PcMain" type="Node2D" unique_id=1554644447]
 script = ExtResource("1_cjxhv")
@@ -54,8 +58,9 @@ offset_right = 1010.0
 offset_bottom = 567.0
 scale = Vector2(0.2, 0.2)
 texture_normal = SubResource("AtlasTexture_gm7sf")
-texture_pressed = SubResource("AtlasTexture_nkqw1")
+texture_pressed = SubResource("AtlasTexture_bsrlg")
 texture_hover = SubResource("AtlasTexture_hbscg")
+texture_disabled = SubResource("AtlasTexture_qsrdp")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1682259525]
 offset = Vector2(640, 360)
