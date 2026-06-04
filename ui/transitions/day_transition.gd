@@ -18,4 +18,4 @@ func _ready() -> void:
 
 func _on_animation_finished(anim_name: String) -> void:
 	if anim_name == "fade":
-		get_tree().change_scene_to_file("res://gameplay/interrogation/intro_lore.tscn")
+		get_tree().change_scene_to_file("res://gameplay/lore/intro_lore.tscn")

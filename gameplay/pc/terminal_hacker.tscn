@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://p0rg2p7mmgii"]
+
+[ext_resource type="Script" uid="uid://c1sxqey5kro60" path="res://gameplay/pc/terminal_hacker.gd" id="1_j8cb2"]
+[ext_resource type="FontFile" uid="uid://labbllem6v7s" path="res://assets/fonts/Terminal F4.ttf" id="1_y8kyr"]
+[ext_resource type="Texture2D" uid="uid://hbhc6a4hrbrp" path="res://assets/sprites/ui/buttons/botao-confirmar-removebg-preview.png" id="2_gulhp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_raq27"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4qvb"]
+atlas = ExtResource("2_gulhp")
+region = Rect2(25, 117, 131, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jior"]
+atlas = ExtResource("2_gulhp")
+region = Rect2(347, 113, 135, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcepl"]
+atlas = ExtResource("2_gulhp")
+region = Rect2(190, 114, 130, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fu2o"]
+atlas = ExtResource("2_gulhp")
+region = Rect2(508, 113, 136, 135)
+
+[node name="TerminalHacker" type="Control" unique_id=2083086490 node_paths=PackedStringArray("main_layout", "task_progress_label", "ref_code_box", "fix_code_edit", "compile_btn")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j8cb2")
+main_layout = NodePath("OSWindow/MarginContainer/MainLayout")
+task_progress_label = NodePath("OSWindow/MarginContainer/MainLayout/HeaderSection/TaskProgressLabel")
+ref_code_box = NodePath("OSWindow/MarginContainer/MainLayout/CodeSplitter/ReferenceBox/RefCodeBox")
+fix_code_edit = NodePath("OSWindow/MarginContainer/MainLayout/CodeSplitter/FixBox/FixCodeEdit")
+compile_btn = NodePath("OSWindow/MarginContainer/MainLayout/ActionButtons/CompileButton")
+
+[node name="OSWindow" type="PanelContainer" parent="." unique_id=507096231]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_raq27")
+
+[node name="MarginContainer" type="MarginContainer" parent="OSWindow" unique_id=2066407666]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="MainLayout" type="VBoxContainer" parent="OSWindow/MarginContainer" unique_id=1051309284]
+layout_mode = 2
+
+[node name="HeaderSection" type="HBoxContainer" parent="OSWindow/MarginContainer/MainLayout" unique_id=671596974]
+layout_mode = 2
+
+[node name="TaskProgressLabel" type="Label" parent="OSWindow/MarginContainer/MainLayout/HeaderSection" unique_id=124089197]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0.4, 1)
+theme_override_fonts/font = ExtResource("1_y8kyr")
+theme_override_font_sizes/font_size = 35
+text = "ANÁLISE: 1/6 | TEMPO: 59s"
+
+[node name="CodeSplitter" type="HBoxContainer" parent="OSWindow/MarginContainer/MainLayout" unique_id=1540298244]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 40
+
+[node name="ReferenceBox" type="VBoxContainer" parent="OSWindow/MarginContainer/MainLayout/CodeSplitter" unique_id=1811095514]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="RefTitle" type="Label" parent="OSWindow/MarginContainer/MainLayout/CodeSplitter/ReferenceBox" unique_id=991558817]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0.4, 1)
+theme_override_fonts/font = ExtResource("1_y8kyr")
+theme_override_font_sizes/font_size = 35
+text = "GABARITO"
+
+[node name="RefCodeBox" type="RichTextLabel" parent="OSWindow/MarginContainer/MainLayout/CodeSplitter/ReferenceBox" unique_id=1957078766]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("1_y8kyr")
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/bold_italics_font_size = 18
+theme_override_font_sizes/italics_font_size = 18
+theme_override_font_sizes/mono_font_size = 18
+
+[node name="FixBox" type="VBoxContainer" parent="OSWindow/MarginContainer/MainLayout/CodeSplitter" unique_id=1445468515]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="FixTitle" type="Label" parent="OSWindow/MarginContainer/MainLayout/CodeSplitter/FixBox" unique_id=1134084728]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0.4, 1)
+theme_override_fonts/font = ExtResource("1_y8kyr")
+theme_override_font_sizes/font_size = 35
+text = "CÓDIGO ANALISADO"
+
+[node name="FixCodeEdit" type="CodeEdit" parent="OSWindow/MarginContainer/MainLayout/CodeSplitter/FixBox" unique_id=224226336]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ActionButtons" type="HBoxContainer" parent="OSWindow/MarginContainer/MainLayout" unique_id=1472191772]
+layout_mode = 2
+alignment = 2
+
+[node name="CompileButton" type="TextureButton" parent="OSWindow/MarginContainer/MainLayout/ActionButtons" unique_id=1723669363]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_g4qvb")
+texture_pressed = SubResource("AtlasTexture_4jior")
+texture_hover = SubResource("AtlasTexture_dcepl")
+texture_disabled = SubResource("AtlasTexture_0fu2o")
+ignore_texture_size = true
+stretch_mode = 5

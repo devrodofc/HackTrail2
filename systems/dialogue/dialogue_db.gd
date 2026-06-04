@@ -22,6 +22,62 @@ const DATA: Dictionary = {
 			"name": "Lorrân",
 			"text": "Eu? Professor, eu passei a noite inteira atualizando o SSD, juro!"
 		}
+	],
+	"tutorial_pc": [
+		{
+			"name": "Prof. Ronisson",
+			"text": "Bem vindo à sala de aula, aqui lhe ensinarei a analisar os códigos dos alunos"
+		}
+	],
+	"time_out_pc": [
+		{
+			"name": "Professor Ronisson",
+			"text": "BIP... BIP... Bloqueio de segurança ativado! Seu tempo de expediente no terminal esgotou."
+		},
+		{
+			"name": "Professor Ronisson",
+			"text": "Precisamos ir para a próxima fase da investigação. Saia do computador e venha falar comigo na sala de interrogatórios imediatamente."
+		}
+	],
+	"day_finished_pc": [
+		{
+			"name": "Professor Ronisson",
+			"text": "Excelente trabalho analisando os dados dos alunos, sua cota do dia foi batida com sucesso."
+		},
+		{
+			"name": "Professor Ronisson",
+			"text": "O terminal foi encriptado. Vamos para a próxima fase. É hora de descobrir quem plantou esses códigos maliciosos."
+		}
+	],
+	"tutorial_hacker_fix": [
+		{
+		"name": "Sistema",
+		"text": "AVISO: Anomalias detectadas em códigos previamente isolados."
+		},
+		{
+		"name": "Sistema",
+		"text": "Iniciando protocolo de mitigação. Reescreva os fragmentos corrompidos para restaurar a integridade do sistema."
+		}
+	],
+	"hacker_phase_success": [
+		{
+		"name": "Sistema",
+		"text": "Protocolo de mitigação concluído. Todas as ameaças foram neutralizadas."
+		},
+		{
+		"name": "Sistema",
+		"text": "Desconectando terminal..."
+		}
+	],
+	"hacker_time_out": [
+		{
+		"name": "Sistema",
+		"text": "FALHA CRÍTICA: Tempo esgotado. Ameaça se espalhou pelo sistema."
+		},
+		{
+		"name": "Sistema",
+		"text": "Bloqueando acesso imediatamente."
+		}
 	]
 }
 

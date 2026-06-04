@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bam2kkab7o17p"
-path="res://.godot/imported/ronisson2.png-a8a3154b38a934cf789e73a57133160e.ctex"
+uid="uid://bucjwwqpuibpb"
+path="res://.godot/imported/botao-power-removebg-preview.png-c1ff825b0a517c2b9b06357a565bebfe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://core/ronisson2.png"
-dest_files=["res://.godot/imported/ronisson2.png-a8a3154b38a934cf789e73a57133160e.ctex"]
+source_file="res://assets/sprites/ui/buttons/botao-power-removebg-preview.png"
+dest_files=["res://.godot/imported/botao-power-removebg-preview.png-c1ff825b0a517c2b9b06357a565bebfe.ctex"]
 
 [params]
 

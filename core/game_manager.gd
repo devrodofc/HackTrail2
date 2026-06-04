@@ -2,6 +2,7 @@ extends Node
 
 var current_day: int = 1
 var player_score: int = 0
+var hacked_tasks_to_fix: Array = []
 
 func _ready() -> void:
 	# Exemplo: O GameManager escutando o próprio EventBus para alterar seus dados

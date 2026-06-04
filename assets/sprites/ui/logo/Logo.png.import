@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jrnwpdgphaed"
-path="res://.godot/imported/dialogue_box1.png-e25663f407db197f16e9a4837bc73a23.ctex"
+uid="uid://brq6lre3wx5ps"
+path="res://.godot/imported/Logo.png-7d83bf90180561cf738e4e0a527a4e5c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/props/dialogue_box1.png"
-dest_files=["res://.godot/imported/dialogue_box1.png-e25663f407db197f16e9a4837bc73a23.ctex"]
+source_file="res://assets/sprites/ui/logo/Logo.png"
+dest_files=["res://.godot/imported/Logo.png-7d83bf90180561cf738e4e0a527a4e5c.ctex"]
 
 [params]
 

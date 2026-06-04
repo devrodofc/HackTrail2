@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://45ga0hvgcmep"]
 
 [ext_resource type="Script" uid="uid://dvwiqiy557rbo" path="res://ui/transitions/day_transition.gd" id="1_7de5w"]
+[ext_resource type="FontFile" uid="uid://labbllem6v7s" path="res://assets/fonts/Terminal F4.ttf" id="2_oymrj"]
 
 [sub_resource type="Animation" id="Animation_pcqbp"]
 length = 0.001
@@ -68,6 +69,7 @@ grow_vertical = 2
 [node name="DayLabel" type="Label" parent="CenterContainer" unique_id=277984798]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 1, 0.4, 1)
+theme_override_fonts/font = ExtResource("2_oymrj")
 theme_override_font_sizes/font_size = 150
 text = "Dia 1"
 
