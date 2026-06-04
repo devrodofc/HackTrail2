@@ -1,14 +1,18 @@
 extends Control
 
-# Referências visuais
-@onready var main_layout: VBoxContainer = $OSWindow/MarginContainer/MainLayout
-@onready var task_progress_label: Label = $OSWindow/MarginContainer/MainLayout/HeaderSection/TaskProgressLabel
-@onready var ref_code_box: RichTextLabel = $OSWindow/MarginContainer/MainLayout/CodeSplitter/ReferenceBox/RefCodeBox
-@onready var student_code_box: RichTextLabel = $OSWindow/MarginContainer/MainLayout/CodeSplitter/StudentBox/StudentCodeBox
+signal phase_finished
 
-@onready var approve_btn: TextureButton = $OSWindow/MarginContainer/MainLayout/ActionButtons/ApproveButton
-@onready var reject_btn: TextureButton = $OSWindow/MarginContainer/MainLayout/ActionButtons/RejectButton
-@onready var hack_btn: TextureButton = $OSWindow/MarginContainer/MainLayout/ActionButtons/HackButton
+# Referências visuais BLINDADAS com % (Unique Names)
+@onready var main_layout: VBoxContainer
+@onready var task_progress_label: Label
+@onready var ref_code_box: RichTextLabel
+@onready var student_code_box: RichTextLabel
+
+@onready var approve_btn: TextureButton
+@onready var reject_btn: TextureButton
+@onready var hack_btn: TextureButton
+
+# ... (o resto do seu script continua exatamente igual a partir daqui, não precisa mudar mais nada)
 
 # Controle da rodada
 var current_tasks: Array = []
@@ -64,16 +68,10 @@ func update_time_display() -> void:
 # --- O FIM DO TEMPO ---
 func time_out_defeat() -> void:
 	is_game_active = false
-	print("O TEMPO ACABOU!")
-	
-	# TRAVA TOTAL: Desabilita todos os botões para o jogador não interagir mais
 	approve_btn.disabled = true
 	reject_btn.disabled = true
 	hack_btn.disabled = true
-	
-	# Avisa o professor pelo banco de diálogos (muda o fluxo narrativo)
-	# Vamos criar esse diálogo no DialogueDB na sequência
-	EventBus.dialogue_requested.emit("time_out_pc")
+	phase_finished.emit() # Avisa o maestro que acabou
 
 # --- ATUALIZAÇÃO DA TELA ---
 func update_ui_with_task() -> void:
@@ -105,6 +103,10 @@ func evaluate_answer(player_action: int) -> void:
 	if player_action == expected_action:
 		print("ACERTOU!")
 		score_for_the_day += 1
+		if expected_action == CodeDB.Status.HACKED:
+			# Se o jogador acertou que era um hack, salva a tarefa toda para a próxima fase!
+			GameManager.hacked_tasks_to_fix.append(current_tasks[current_task_index])
+			print("Tarefa suspeita guardada para análise manual!")
 	else:
 		print("ERROU!")
 		
@@ -121,10 +123,8 @@ func advance_to_next_task() -> void:
 		finish_day() 
 
 func finish_day() -> void:
-	print("Análises finalizadas com sucesso!")
-	# Trava a tela e pede o diálogo de fim de expediente normal
+	is_game_active = false
 	approve_btn.disabled = true
 	reject_btn.disabled = true
 	hack_btn.disabled = true
-	
-	EventBus.dialogue_requested.emit("day_finished_pc")
+	phase_finished.emit() # Avisa o maestro que acabou

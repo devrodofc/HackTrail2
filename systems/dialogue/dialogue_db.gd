@@ -48,6 +48,36 @@ const DATA: Dictionary = {
 			"name": "Professor Ronisson",
 			"text": "O terminal foi encriptado. Vamos para a próxima fase. É hora de descobrir quem plantou esses códigos maliciosos."
 		}
+	],
+	"tutorial_hacker_fix": [
+		{
+		"name": "Sistema",
+		"text": "AVISO: Anomalias detectadas em códigos previamente isolados."
+		},
+		{
+		"name": "Sistema",
+		"text": "Iniciando protocolo de mitigação. Reescreva os fragmentos corrompidos para restaurar a integridade do sistema."
+		}
+	],
+	"hacker_phase_success": [
+		{
+		"name": "Sistema",
+		"text": "Protocolo de mitigação concluído. Todas as ameaças foram neutralizadas."
+		},
+		{
+		"name": "Sistema",
+		"text": "Desconectando terminal..."
+		}
+	],
+	"hacker_time_out": [
+		{
+		"name": "Sistema",
+		"text": "FALHA CRÍTICA: Tempo esgotado. Ameaça se espalhou pelo sistema."
+		},
+		{
+		"name": "Sistema",
+		"text": "Bloqueando acesso imediatamente."
+		}
 	]
 }
 
