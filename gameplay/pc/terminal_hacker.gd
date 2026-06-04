@@ -17,7 +17,8 @@ var fix_time_left: int = 90
 var is_fixing: bool = false
 
 func _ready() -> void:
-	main_layout.modulate.a = 0.0
+	if main_layout:
+		main_layout.modulate.a = 0.0
 	compile_btn.pressed.connect(_on_compile_pressed)
 
 func boot_system() -> void:

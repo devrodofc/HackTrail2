@@ -9,7 +9,7 @@ var current_state: String = "init"
 
 func _ready() -> void:
 	print("[MAESTRO] 1. Iniciando cena...")
-	terminal_fase1.hide()
+	terminal_fase1.show()
 	terminal_fase2.hide()
 	
 	# TRAVA 1: Previne que apertar "Espaço" ou "Enter" no diálogo clique no botão sem querer

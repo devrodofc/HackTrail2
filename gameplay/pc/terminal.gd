@@ -23,7 +23,8 @@ var is_game_active: bool = true
 var countdown_timer: SceneTreeTimer = null
 
 func _ready() -> void:
-	main_layout.modulate.a = 0.0 
+	if main_layout:
+		main_layout.modulate.a = 0.0
 	
 	approve_btn.pressed.connect(_on_approve_pressed)
 	reject_btn.pressed.connect(_on_reject_pressed)

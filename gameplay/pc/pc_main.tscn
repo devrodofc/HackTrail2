@@ -63,8 +63,8 @@ scale = Vector2(0.3, 0.3)
 [node name="StartButton" type="TextureButton" parent="." unique_id=544018434]
 offset_left = 852.0
 offset_top = 411.0
-offset_right = 1010.0
-offset_bottom = 567.0
+offset_right = 982.0
+offset_bottom = 544.0
 scale = Vector2(0.2, 0.2)
 texture_normal = SubResource("AtlasTexture_gm7sf")
 texture_pressed = SubResource("AtlasTexture_bsrlg")
