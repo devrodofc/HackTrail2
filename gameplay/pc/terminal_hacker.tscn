@@ -23,7 +23,7 @@ region = Rect2(190, 114, 130, 136)
 atlas = ExtResource("2_gulhp")
 region = Rect2(508, 113, 136, 135)
 
-[node name="TerminalHacker" type="Control" unique_id=2083086490]
+[node name="TerminalHacker" type="Control" unique_id=2083086490 node_paths=PackedStringArray("main_layout", "task_progress_label", "ref_code_box", "fix_code_edit", "compile_btn")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,6 +31,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j8cb2")
+main_layout = NodePath("OSWindow/MarginContainer/MainLayout")
+task_progress_label = NodePath("OSWindow/MarginContainer/MainLayout/HeaderSection/TaskProgressLabel")
+ref_code_box = NodePath("OSWindow/MarginContainer/MainLayout/CodeSplitter/ReferenceBox/RefCodeBox")
+fix_code_edit = NodePath("OSWindow/MarginContainer/MainLayout/CodeSplitter/FixBox/FixCodeEdit")
+compile_btn = NodePath("OSWindow/MarginContainer/MainLayout/ActionButtons/CompileButton")
 
 [node name="OSWindow" type="PanelContainer" parent="." unique_id=507096231]
 layout_mode = 1

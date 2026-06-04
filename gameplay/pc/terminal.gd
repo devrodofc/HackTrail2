@@ -2,17 +2,15 @@ extends Control
 
 signal phase_finished
 
-# Referências visuais BLINDADAS com % (Unique Names)
-@onready var main_layout: VBoxContainer
-@onready var task_progress_label: Label
-@onready var ref_code_box: RichTextLabel
-@onready var student_code_box: RichTextLabel
+# Referências Visuais Exportadas
+@export var main_layout: VBoxContainer
+@export var task_progress_label: Label
+@export var ref_code_box: RichTextLabel
+@export var student_code_box: RichTextLabel
 
-@onready var approve_btn: TextureButton
-@onready var reject_btn: TextureButton
-@onready var hack_btn: TextureButton
-
-# ... (o resto do seu script continua exatamente igual a partir daqui, não precisa mudar mais nada)
+@export var approve_btn: TextureButton
+@export var reject_btn: TextureButton
+@export var hack_btn: TextureButton
 
 # Controle da rodada
 var current_tasks: Array = []
