@@ -47,6 +47,9 @@ func display_current_line() -> void:
 	name_label.text = line_data["name"]
 	text_label.text = line_data["text"]
 	
+	# EMITE O SINAL AVISANDO QUEM ESTÁ FALANDO AGORA
+	EventBus.speaker_changed.emit(line_data["name"])
+	
 	# Efeito Máquina de Escrever usando Tween
 	text_label.visible_characters = 0
 	is_typing = true

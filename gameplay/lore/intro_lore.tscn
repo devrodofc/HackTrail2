@@ -3,77 +3,16 @@
 [ext_resource type="Script" uid="uid://dunu1ladwe6sx" path="res://gameplay/lore/intro_lore.gd" id="1_2dqi6"]
 [ext_resource type="Texture2D" uid="uid://cuqfieyu4lgln" path="res://assets/sprites/backgrounds/fundo_escola.png" id="2_dflyh"]
 [ext_resource type="Texture2D" uid="uid://rq7goamo5x40" path="res://assets/sprites/npcs/ronisson/ronisson2.png" id="3_wafk0"]
+[ext_resource type="Texture2D" uid="uid://dlf4yn5fudcbp" path="res://assets/sprites/npcs/mapurunga/mapurunga.png" id="4_t4kpe"]
 
-[sub_resource type="Animation" id="Animation_2bqd0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ProfessorSprite:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ProfessorSprite:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.8, 0.8)]
-}
-
-[sub_resource type="Animation" id="Animation_p5dd4"]
-resource_name = "fade"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ProfessorSprite:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_gcq30"]
-resource_name = "idle"
-length = 4.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ProfessorSprite:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(1, 2.5, 4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0.8, 0.8), Vector2(0.9, 0.9), Vector2(0.8, 0.8)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gcq30"]
-_data = {
-&"RESET": SubResource("Animation_2bqd0"),
-&"fade": SubResource("Animation_p5dd4"),
-&"idle": SubResource("Animation_gcq30")
-}
-
-[node name="IntroTutorialProfessor" type="Control" unique_id=1408690546]
+[node name="IntroTutorialProfessor" type="Control" unique_id=1408690546 node_paths=PackedStringArray("prof_sprite", "player_sprite")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_2dqi6")
+prof_sprite = NodePath("ProfessorSprite")
+player_sprite = NodePath("PlayerSprite")
+scale_active = Vector2(0.72, 0.72)
+scale_normal = Vector2(0.7, 0.7)
 
 [node name="Background" type="TextureRect" parent="." unique_id=1123111887]
 layout_mode = 1
@@ -88,11 +27,24 @@ grow_vertical = 2
 texture = ExtResource("2_dflyh")
 expand_mode = 1
 
-[node name="ProfessorSprite" type="Sprite2D" parent="." unique_id=948747879]
+[node name="ProfessorSprite" type="TextureRect" parent="." unique_id=453778732]
 texture_filter = 1
-position = Vector2(640, 360)
-scale = Vector2(0.8, 0.8)
+layout_mode = 0
+offset_left = 180.0
+offset_top = 30.0
+offset_right = 680.0
+offset_bottom = 530.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(250, 500)
 texture = ExtResource("3_wafk0")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=820504036]
-libraries/ = SubResource("AnimationLibrary_gcq30")
+[node name="PlayerSprite" type="TextureRect" parent="." unique_id=738101516]
+texture_filter = 1
+layout_mode = 0
+offset_left = 580.0
+offset_top = 30.0
+offset_right = 1080.0
+offset_bottom = 530.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(250, 500)
+texture = ExtResource("4_t4kpe")

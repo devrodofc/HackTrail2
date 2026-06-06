@@ -3,14 +3,22 @@ extends Node
 
 # Estrutura: "ID_DO_DIALOGO": [ { "name": "Quem fala", "text": "O que fala" }, ... ]
 const DATA: Dictionary = {
-	"intro_lore": [
+"intro_lore": [
 		{
 			"name": "Prof. Ronisson",
 			"text": "Bem-vindo ao laboratório de programação da Unifor. Hoje o dia será longo..."
 		},
 		{
+			"name": "Player",
+			"text": "Estou pronto, professor. Qual é o problema de hoje?"
+		},
+		{
 			"name": "Prof. Ronisson",
-			"text": "Algum engraçadinho invadiu o sistema ontem. Preciso que você analise o código dos alunos."
+			"text": "Algum engraçadinho invadiu o sistema ontem. Preciso que Player analise o código dos alunos."
+		},
+		{
+			"name": "Player",
+			"text": "Pode deixar. Vou separar o que é erro comum do que é ataque cibernético."
 		},
 		{
 			"name": "Prof. Ronisson",

@@ -26,9 +26,9 @@ grow_vertical = 0
 [node name="PanelContainer" type="PanelContainer" parent="DialogueContainer" unique_id=853364581]
 layout_mode = 0
 offset_left = -370.0
-offset_top = -85.0
+offset_top = -50.0
 offset_right = 347.0
-offset_bottom = 167.0
+offset_bottom = 202.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_nplmc")
 
 [node name="MarginContainer" type="MarginContainer" parent="DialogueContainer/PanelContainer" unique_id=203883306]
