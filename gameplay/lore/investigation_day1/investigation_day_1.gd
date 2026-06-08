@@ -50,12 +50,18 @@ func _focus_character(active_char: TextureRect, inactive_char: TextureRect) -> v
 		current_tween.tween_property(inactive_char, "modulate:a", alpha_inactive, 0.3)
 
 # --- FIM DO DIA 1 ---
-
 func _on_dialogue_finished() -> void:
+	# Desconecta os sinais para evitar vazamento de memória
 	if EventBus.dialogue_finished.is_connected(_on_dialogue_finished):
 		EventBus.dialogue_finished.disconnect(_on_dialogue_finished)
 	if EventBus.speaker_changed.is_connected(_on_speaker_changed):
 		EventBus.speaker_changed.disconnect(_on_speaker_changed)
 	
-	print("[INVESTIGAÇÃO] Diálogo do Dia 1 encerrado. Aguardando integração futura...")
-	# Futuramente, colocaremos a transição para o Dia 2 ou para o Menu aqui
+	print("[INVESTIGAÇÃO] Diálogo do Dia 1 encerrado. Avançando para o próximo dia...")
+	
+	# 1. Avisa o GameManager que o dia terminou com sucesso (isso vai somar +1 no dia atual)
+	GameManager._on_day_ended(true)
+	
+	# 2. Volta para a cena de transição (que agora vai ler que estamos no Dia 2)
+	# Mude o caminho abaixo para o caminho exato do arquivo da sua cena de transição!
+	get_tree().change_scene_to_file("res://ui/transitions/day_transition.tscn")

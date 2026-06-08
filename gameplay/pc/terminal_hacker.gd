@@ -20,15 +20,19 @@ func _ready() -> void:
 	if main_layout:
 		main_layout.modulate.a = 0.0
 	compile_btn.pressed.connect(_on_compile_pressed)
-
+	
 func boot_system() -> void:
+	# Puxa as tarefas EXATAS que o jogador marcou como "Hack" na Fase 1
 	tasks_to_fix = GameManager.hacked_tasks_to_fix
 	
+	# SE O JOGADOR NÃO PEGOU NENHUM HACKER (Deixou passar ou não veio na rodada):
 	if tasks_to_fix.size() == 0:
 		print("Nenhuma ameaça detectada na fase anterior. Pulando correção...")
+		# A fase 2 nem abre, pula direto pro Maestro encerrar
 		hacker_phase_finished.emit()
 		return
 		
+	# SE ELE PEGOU, ABRE A FASE DE CORREÇÃO COM OS CÓDIGOS CORRETOS
 	var tween = create_tween()
 	tween.tween_property(main_layout, "modulate:a", 1.0, 1.0)
 	await tween.finished
@@ -37,7 +41,7 @@ func boot_system() -> void:
 	current_fix_index = 0
 	update_fix_ui()
 	start_countdown()
-
+	
 func start_countdown() -> void:
 	while fix_time_left > 0 and is_fixing:
 		update_time_display()

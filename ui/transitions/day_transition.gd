@@ -18,4 +18,10 @@ func _ready() -> void:
 
 func _on_animation_finished(anim_name: String) -> void:
 	if anim_name == "fade":
-		get_tree().change_scene_to_file("res://gameplay/lore/intro_lore.tscn")
+		# MUDANÇA AQUI: Verifica em qual dia estamos para decidir o destino
+		if GameManager.current_day == 1:
+			# Se for o primeiro dia, passa pela introdução da história
+			get_tree().change_scene_to_file("res://gameplay/lore/intro_lore.tscn")
+		else:
+			# Se for Dia 2 ou mais, pula a introdução e vai direto para a mesa com o PC!
+			get_tree().change_scene_to_file("res://gameplay/pc/pc_main.tscn")

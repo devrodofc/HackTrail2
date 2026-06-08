@@ -109,6 +109,28 @@ const DATA: Dictionary = {
 			"text": "Vou analisar os logs da sua máquina. Se você estiver mentindo, o Prof. Ronisson vai saber."
 		}
 	],
+	"conclusion_lusquinha": [
+		{
+			"name": "Você",
+			"text": "Analisei seus logs, Lusquinha. De ponta a ponta."
+		},
+		{
+			"name": "Lusquinha",
+			"text": "E aí? Você viu que eu não menti, né? Eu sou inocente!"
+		},
+		{
+			"name": "Você",
+			"text": "Sim. Era apenas um malware escondido em um mod de jogo que você baixou. Ele estava usando seu PC como zumbi."
+		},
+		{
+			"name": "Lusquinha",
+			"text": "Ufa! Que alívio... Vou deletar tudo agora mesmo! Valeu por me ajudar, cara."
+		},
+		{
+			"name": "Você",
+			"text": "Só tome mais cuidado. O culpado ainda está lá fora e agora ele sabe que estamos de olho."
+		}
+	]
 }
 
 static func get_dialogue(id: String) -> Array:
