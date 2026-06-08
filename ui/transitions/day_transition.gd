@@ -15,13 +15,18 @@ func _ready() -> void:
 	
 	# Inicia a animação de Fade
 	anim_player.play("fade")
-
+	
 func _on_animation_finished(anim_name: String) -> void:
 	if anim_name == "fade":
-		# MUDANÇA AQUI: Verifica em qual dia estamos para decidir o destino
 		if GameManager.current_day == 1:
-			# Se for o primeiro dia, passa pela introdução da história
-			get_tree().change_scene_to_file("res://gameplay/lore/intro_lore.tscn")
+			# Para o Dia 1 (início do jogo), vai para a introdução
+			get_tree().change_scene_to_file("res://gameplay/lore/intro/intro_lore.tscn")
+			
+		elif GameManager.current_day == 2:
+			# MUDANÇA AQUI: No início do Dia 2, o jogador vê a conclusão do caso Lusquinha primeiro!
+			# Lembre-se de confirmar se o caminho da cena está correto no seu projeto
+			get_tree().change_scene_to_file("res://gameplay/lore/conclusion_day2/conclusion_day2.tscn")
+			
 		else:
-			# Se for Dia 2 ou mais, pula a introdução e vai direto para a mesa com o PC!
+			# Dia 3 em diante: Vai direto trabalhar no PC (até criarmos mais histórias depois)
 			get_tree().change_scene_to_file("res://gameplay/pc/pc_main.tscn")

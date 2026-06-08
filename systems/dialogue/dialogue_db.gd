@@ -3,7 +3,7 @@ extends Node
 
 # Estrutura: "ID_DO_DIALOGO": [ { "name": "Quem fala", "text": "O que fala" }, ... ]
 const DATA: Dictionary = {
-"intro_lore": [
+	"intro_lore": [
 		{
 			"name": "Prof. Ronisson",
 			"text": "Bem-vindo ao laboratório de programação da Unifor. Hoje o dia será longo..."
@@ -23,12 +23,6 @@ const DATA: Dictionary = {
 		{
 			"name": "Prof. Ronisson",
 			"text": "Fique atento a códigos maliciosos ou comportamentos estranhos. Não temos muito tempo!"
-		}
-	],
-	"aluno_suspeito": [
-		{
-			"name": "Lorrân",
-			"text": "Eu? Professor, eu passei a noite inteira atualizando o SSD, juro!"
 		}
 	],
 	"tutorial_pc": [
@@ -102,7 +96,7 @@ const DATA: Dictionary = {
 		},
 		{
 			"name": "Lusquinha",
-			"text": "Pô, meu PC tava travando muito, eu devo ter baixado algum mod esquisito praquele jogo de fazendinha... Eu não sou hacker!"
+			"text": "Pô, meu PC tava travando muito, eu devo ter baixado algum mod esquisito praquele jogo de tiro... Eu não sou hacker!"
 		},
 		{
 			"name": "Você",
@@ -129,6 +123,50 @@ const DATA: Dictionary = {
 		{
 			"name": "Você",
 			"text": "Só tome mais cuidado. O culpado ainda está lá fora e agora ele sabe que estamos de olho."
+		},
+	],
+	"interrogation_day2": [
+		{
+			"name": "Você",
+			"text": "Senta aí, Nathan. Precisamos conversar sobre o tráfego do seu terminal hoje."
+		},
+		{
+			"name": "Nathan",
+			"text": "Conversar sobre o quê? Meu código rodou perfeitamente. Se o servidor caiu, não foi culpa minha."
+		},
+		{
+			"name": "Você",
+			"text": "O problema não é o servidor cair. Os logs mostram varreduras de portas e tentativas de injeção vindo da sua máquina."
+		},
+		{
+			"name": "Nathan",
+			"text": "Ah, isso? Eu estava fazendo um 'pentest' proativo. Alguém tem que garantir a segurança desse laboratório."
+		},
+		{
+			"name": "Você",
+			"text": "Auditoria não autorizada é infração grave. Vou fazer uma varredura completa na sua máquina antes de relatar ao professor."
+		}
+	],
+	"conclusion_nathan": [
+		{
+			"name": "Você",
+			"text": "Terminei de analisar sua máquina, Nathan."
+		},
+		{
+			"name": "Nathan",
+			"text": "E aí? Provou que eu sou o único aluno blindando a rede da universidade?"
+		},
+		{
+			"name": "Você",
+			"text": "Pelo contrário. A sua brincadeira de 'pentest' abriu um backdoor. O verdadeiro invasor usou a sua máquina como ponte."
+		},
+		{
+			"name": "Nathan",
+			"text": "O quê?! Mas eu fechei todas as portas... Droga. Fui usado de laranja."
+		},
+		{
+			"name": "Você",
+			"text": "Exato. O professor vai te dar uma advertência formal. E o verdadeiro hacker continua solto."
 		}
 	]
 }

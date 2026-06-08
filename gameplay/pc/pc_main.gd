@@ -22,9 +22,18 @@ func _ready() -> void:
 	
 	await get_tree().create_timer(1.0).timeout
 	
-	print("[MAESTRO] 2. Chamando primeiro diálogo...")
-	current_state = "intro"
-	EventBus.dialogue_requested.emit("tutorial_pc") 
+	# =========================================================
+	# MUDANÇA AQUI: Verifica o dia antes de chamar o diálogo
+	# =========================================================
+	if GameManager.current_day == 1:
+		print("[MAESTRO] 2. Dia 1. Chamando primeiro diálogo...")
+		current_state = "intro"
+		EventBus.dialogue_requested.emit("tutorial_pc")
+	else:
+		print("[MAESTRO] 2. Dia 2+. Pulando tutorial.")
+		current_state = "waiting_button"
+		start_button.disabled = false # Libera o botão imediatamente
+	# =========================================================
 
 func _on_dialogue_finished() -> void:
 	print("[MAESTRO] 3. Diálogo fechado. Estado atual era: ", current_state)

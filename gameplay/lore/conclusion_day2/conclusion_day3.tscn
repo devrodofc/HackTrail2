@@ -1,16 +1,20 @@
 [gd_scene format=3 uid="uid://1ymf8e5adnx8"]
 
-[ext_resource type="Texture2D" uid="uid://cuqfieyu4lgln" path="res://assets/sprites/backgrounds/fundo_escola.png" id="1_skxs6"]
-[ext_resource type="Texture2D" uid="uid://dv5sj1eb7oeck" path="res://assets/sprites/npcs/lusquinha/lusquinha3.png" id="2_rts26"]
-[ext_resource type="Texture2D" uid="uid://dlf4yn5fudcbp" path="res://assets/sprites/npcs/mapurunga/mapurunga.png" id="3_atwkf"]
+[ext_resource type="Script" uid="uid://biwunwt6id47" path="res://gameplay/lore/conclusion_day2/conclusion_day_2.gd" id="1_3vqgg"]
+[ext_resource type="Texture2D" uid="uid://cuqfieyu4lgln" path="res://assets/sprites/backgrounds/fundo_escola.png" id="1_6g2gh"]
+[ext_resource type="Texture2D" uid="uid://dv5sj1eb7oeck" path="res://assets/sprites/npcs/lusquinha/lusquinha3.png" id="2_3vqgg"]
+[ext_resource type="Texture2D" uid="uid://dlf4yn5fudcbp" path="res://assets/sprites/npcs/mapurunga/mapurunga.png" id="3_kq7md"]
 
-[node name="Control" type="Control" unique_id=1280865141]
+[node name="ConclusionDay2" type="Control" unique_id=1280865141 node_paths=PackedStringArray("npc_sprite", "player_sprite")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3vqgg")
+npc_sprite = NodePath("LusquinhaSprite")
+player_sprite = NodePath("PlayerSprite")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1498935278]
 layout_mode = 1
@@ -21,7 +25,7 @@ offset_top = -60.0
 offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_skxs6")
+texture = ExtResource("1_6g2gh")
 expand_mode = 1
 
 [node name="LusquinhaSprite" type="TextureRect" parent="." unique_id=82531099]
@@ -33,7 +37,7 @@ offset_right = 660.0
 offset_bottom = 530.0
 scale = Vector2(0.7, 0.7)
 pivot_offset = Vector2(250, 500)
-texture = ExtResource("2_rts26")
+texture = ExtResource("2_3vqgg")
 
 [node name="PlayerSprite" type="TextureRect" parent="." unique_id=1173303250]
 texture_filter = 1
@@ -44,4 +48,4 @@ offset_right = 1030.0
 offset_bottom = 530.0
 scale = Vector2(0.7, 0.7)
 pivot_offset = Vector2(250, 500)
-texture = ExtResource("3_atwkf")
+texture = ExtResource("3_kq7md")
