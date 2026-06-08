@@ -86,7 +86,29 @@ const DATA: Dictionary = {
 		"name": "Sistema",
 		"text": "Bloqueando acesso imediatamente."
 		}
-	]
+	],
+	"interrogation_day1": [
+		{
+			"name": "Você",
+			"text": "Senta aí, Lusquinha. A gente precisa conversar sobre o que aconteceu no laboratório."
+		},
+		{
+			"name": "Lusquinha",
+			"text": "Cara, eu não fiz nada! Eu juro! Eu só tava jogando no meu PC lá no fundo."
+		},
+		{
+			"name": "Você",
+			"text": "Os registros do servidor dizem outra coisa. Seu IP tava floodando a rede."
+		},
+		{
+			"name": "Lusquinha",
+			"text": "Pô, meu PC tava travando muito, eu devo ter baixado algum mod esquisito praquele jogo de fazendinha... Eu não sou hacker!"
+		},
+		{
+			"name": "Você",
+			"text": "Vou analisar os logs da sua máquina. Se você estiver mentindo, o Prof. Ronisson vai saber."
+		}
+	],
 }
 
 static func get_dialogue(id: String) -> Array:

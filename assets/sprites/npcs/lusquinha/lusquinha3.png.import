@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4u3dx4qqf4jf"
-path="res://.godot/imported/lusquinha.png-9bc60cad2d9049ef30c9c44d60582c34.ctex"
+uid="uid://dv5sj1eb7oeck"
+path="res://.godot/imported/lusquinha3.png-2b8af7c27bc5bd4ac7e7427f3b502be7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/npcs/lusquinha/lusquinha.png"
-dest_files=["res://.godot/imported/lusquinha.png-9bc60cad2d9049ef30c9c44d60582c34.ctex"]
+source_file="res://assets/sprites/npcs/lusquinha/lusquinha3.png"
+dest_files=["res://.godot/imported/lusquinha3.png-2b8af7c27bc5bd4ac7e7427f3b502be7.ctex"]
 
 [params]
 

