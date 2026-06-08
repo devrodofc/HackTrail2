@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cl0oun21wfhx"]
+
+[ext_resource type="Script" uid="uid://claw42foh6hmt" path="res://gameplay/lore/investigation/day3/investigation_day_3.gd" id="1_omdfs"]
+[ext_resource type="Texture2D" uid="uid://cuqfieyu4lgln" path="res://assets/sprites/backgrounds/fundo_escola.png" id="2_efh3i"]
+[ext_resource type="Texture2D" uid="uid://cfbtblums2j8m" path="res://assets/sprites/npcs/leozin/leozin.png" id="2_f35t0"]
+[ext_resource type="Texture2D" uid="uid://dlf4yn5fudcbp" path="res://assets/sprites/npcs/mapurunga/mapurunga.png" id="4_svkv8"]
+
+[node name="InvestigationDay3" type="Control" unique_id=1408690546 node_paths=PackedStringArray("npc_sprite", "player_sprite")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_omdfs")
+npc_sprite = NodePath("LeozinSprite")
+player_sprite = NodePath("PlayerSprite")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1123111887]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+offset_right = 1280.0
+offset_bottom = 784.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_efh3i")
+expand_mode = 1
+
+[node name="PlayerSprite" type="TextureRect" parent="." unique_id=738101516]
+texture_filter = 1
+layout_mode = 0
+offset_left = 530.0
+offset_top = 30.0
+offset_right = 1030.0
+offset_bottom = 530.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(250, 500)
+texture = ExtResource("4_svkv8")
+
+[node name="LeozinSprite" type="TextureRect" parent="." unique_id=453778732]
+texture_filter = 1
+layout_mode = 0
+offset_left = 170.0
+offset_top = 29.0
+offset_right = 670.0
+offset_bottom = 591.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(250, 500)
+texture = ExtResource("2_f35t0")

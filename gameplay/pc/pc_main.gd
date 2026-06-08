@@ -51,13 +51,23 @@ func _on_dialogue_finished() -> void:
 		terminal_fase2.boot_system() 
 		
 	elif current_state == "end":
-		# MUDANÇA AQUI: Transição para a sala de interrogatório
-		print("[MAESTRO] 10. PC desligado. Indo para a sala de interrogatório...")
-		# Desconecta os sinais do PC antes de mudar de cena para não vazar memória
-		if EventBus.dialogue_finished.is_connected(_on_dialogue_finished):
-			EventBus.dialogue_finished.disconnect(_on_dialogue_finished)
-			
-		get_tree().change_scene_to_file("res://gameplay/lore/investigation_day1/investigation_day_1.tscn")
+		_advance_to_investigation()
+
+func _advance_to_investigation() -> void:
+	print("[MAESTRO] 10. PC desligado. Indo para a sala de interrogatório...")
+	# Desconecta os sinais do PC antes de mudar de cena para não vazar memória
+	if EventBus.dialogue_finished.is_connected(_on_dialogue_finished):
+		EventBus.dialogue_finished.disconnect(_on_dialogue_finished)
+		
+	# MUDANÇA: Roteia para a cena certa baseada no dia atual!
+	if GameManager.current_day == 1:
+		get_tree().change_scene_to_file("res://gameplay/lore/investigation/day1/investigation_day_1.tscn")
+	elif GameManager.current_day == 2:
+		get_tree().change_scene_to_file("res://gameplay/lore/investigation/day2/investigation_day2.tscn") # Ajuste o caminho se necessário
+	elif GameManager.current_day == 3:
+		get_tree().change_scene_to_file("res://gameplay/lore/investigation/day3/investigation_day3.tscn") # Ajuste o caminho se necessário
+	else:
+		print("ERRO: Cena de investigação não configurada para este dia.")
 
 func _on_start_button_pressed() -> void:
 	print("[MAESTRO] 5. Botão CLICADO fisicamente! Iniciando Zoom...")
@@ -81,11 +91,22 @@ func _on_start_button_pressed() -> void:
 	terminal_fase1.boot_system()
 
 func _on_fase1_finished() -> void:
-	print("[MAESTRO] 7. Fase 1 encerrou! Chamando diálogo do hacker...")
-	current_state = "hacker_intro"
-	EventBus.dialogue_requested.emit("tutorial_hacker_fix")
+	print("[MAESTRO] 7. Fase 1 encerrou! Chamando diálogo do hacker se for Dia 1...")
+	if GameManager.current_day == 1:
+		current_state = "hacker_intro"
+		EventBus.dialogue_requested.emit("tutorial_hacker_fix")
+	else:
+		current_state = "hacker_gameplay"
+		terminal_fase1.hide()
+		terminal_fase2.show()
+		terminal_fase2.boot_system()
 
 func _on_fase2_finished() -> void:
 	print("[MAESTRO] 9. Fase 2 encerrou com sucesso!")
 	current_state = "end"
-	EventBus.dialogue_requested.emit("hacker_phase_success")
+	
+	if GameManager.current_day == 1:
+		EventBus.dialogue_requested.emit("hacker_phase_success")
+	else:
+		# Dia 2+, pula o diálogo final do PC e vai direto pra investigação
+		_advance_to_investigation()

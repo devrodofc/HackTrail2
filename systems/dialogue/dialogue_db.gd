@@ -167,6 +167,56 @@ const DATA: Dictionary = {
 		{
 			"name": "Você",
 			"text": "Exato. O professor vai te dar uma advertência formal. E o verdadeiro hacker continua solto."
+		},
+	],
+	"interrogation_day3": [
+		{
+			"name": "Você",
+			"text": "Leozin, precisamos falar sobre os pacotes suspeitos saindo do seu ambiente de desenvolvimento."
+		},
+		{
+			"name": "Leozin",
+			"text": "Do meu? Cara, eu só rodo script otimizado. Meu ambiente é impecável, zero bugs."
+		},
+		{
+			"name": "Você",
+			"text": "Então como você explica o minerador de criptomoedas e o script de exfiltração rodando em background no seu terminal?"
+		},
+		{
+			"name": "Leozin",
+			"text": "Pera... eu baixei uma biblioteca paralela ontem que prometia compilar o código 10x mais rápido. Tava cheia de estrelas no fórum!"
+		},
+		{
+			"name": "Você",
+			"text": "Você rodou código de terceiros sem auditar na rede do laboratório? Vou ter que isolar sua máquina agora mesmo."
+		}
+	],
+	"conclusion_leozin": [
+		{
+			"name": "Você",
+			"text": "A análise terminou, Leozin."
+		},
+		{
+			"name": "Leozin",
+			"text": "E aí? Conseguiu limpar aquela biblioteca esquisita do meu terminal?"
+		},
+		{
+			"name": "Você",
+			"text": "Remover o minerador foi fácil. O problema é que a biblioteca era um Cavalo de Troia. Ela abriu as portas da rede principal."
+		},
+		{
+			"name": "Leozin",
+			"text": "Puts... o Professor Ronisson vai acabar com a minha nota. Fui tapeado por um repositório falso."
+		},
+		{
+			"name": "Você",
+			"text": "A nota é o de menos agora. O hacker conseguiu acesso de administrador usando a sua máquina. A situação saiu do controle."
+		}
+	],
+	"choice_intro": [
+		{
+			"name": "Prof. Ronisson",
+			"text": "A situação saiu completamente do controle! Analisamos todos os logs e os três suspeitos estão na sala. Quem é o verdadeiro hacker?"
 		}
 	]
 }

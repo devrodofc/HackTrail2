@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://yogjqq8k7w2r"]
 
-[ext_resource type="Script" uid="uid://bkt87po7dlkfj" path="res://gameplay/lore/investigation_day1/investigation_day_1.gd" id="1_mlj4a"]
+[ext_resource type="Script" uid="uid://bkt87po7dlkfj" path="res://gameplay/lore/investigation/day1/investigation_day_1.gd" id="1_mlj4a"]
 [ext_resource type="Texture2D" uid="uid://cuqfieyu4lgln" path="res://assets/sprites/backgrounds/fundo_escola.png" id="2_0l26b"]
 [ext_resource type="Texture2D" uid="uid://dv5sj1eb7oeck" path="res://assets/sprites/npcs/lusquinha/lusquinha3.png" id="3_mlj4a"]
 [ext_resource type="Texture2D" uid="uid://dlf4yn5fudcbp" path="res://assets/sprites/npcs/mapurunga/mapurunga.png" id="4_6yhhs"]
