@@ -23,8 +23,11 @@ region = Rect2(193, 121, 129, 132)
 atlas = ExtResource("5_rwyob")
 region = Rect2(489, 121, 128, 132)
 
-[node name="PcMain" type="Node2D" unique_id=1554644447]
+[node name="PcMain" type="Node2D" unique_id=1554644447 node_paths=PackedStringArray("start_button", "terminal_fase1", "terminal_fase2")]
 script = ExtResource("1_cjxhv")
+start_button = NodePath("StartButton")
+terminal_fase1 = NodePath("Terminal")
+terminal_fase2 = NodePath("TerminalHacker")
 
 [node name="Background" type="TextureRect" parent="." unique_id=2140930053]
 anchors_preset = 15
@@ -63,8 +66,8 @@ scale = Vector2(0.3, 0.3)
 [node name="StartButton" type="TextureButton" parent="." unique_id=544018434]
 offset_left = 852.0
 offset_top = 411.0
-offset_right = 1010.0
-offset_bottom = 567.0
+offset_right = 982.0
+offset_bottom = 544.0
 scale = Vector2(0.2, 0.2)
 texture_normal = SubResource("AtlasTexture_gm7sf")
 texture_pressed = SubResource("AtlasTexture_bsrlg")

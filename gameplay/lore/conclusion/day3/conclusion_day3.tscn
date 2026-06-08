@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bgol2d4ahc0l"]
+
+[ext_resource type="Script" uid="uid://bfdrofqghhgy" path="res://gameplay/lore/conclusion/day3/conclusion_day_3.gd" id="1_jd1sj"]
+[ext_resource type="Texture2D" uid="uid://cuqfieyu4lgln" path="res://assets/sprites/backgrounds/fundo_escola.png" id="2_3kii8"]
+[ext_resource type="Texture2D" uid="uid://dlf4yn5fudcbp" path="res://assets/sprites/npcs/mapurunga/mapurunga.png" id="3_gb057"]
+[ext_resource type="Texture2D" uid="uid://c3d5lbb2hr0km" path="res://assets/sprites/npcs/nathan/nathan2.png" id="4_jrvru"]
+
+[node name="ConclusionDay3" type="Control" unique_id=1280865141 node_paths=PackedStringArray("npc_sprite", "player_sprite")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jd1sj")
+npc_sprite = NodePath("NathanSprite")
+player_sprite = NodePath("PlayerSprite")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1498935278]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3kii8")
+expand_mode = 1
+
+[node name="PlayerSprite" type="TextureRect" parent="." unique_id=1173303250]
+texture_filter = 1
+layout_mode = 0
+offset_left = 530.0
+offset_top = 30.0
+offset_right = 1030.0
+offset_bottom = 530.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(250, 500)
+texture = ExtResource("3_gb057")
+
+[node name="NathanSprite" type="TextureRect" parent="." unique_id=1864810899]
+texture_filter = 1
+layout_mode = 0
+offset_left = 107.00001
+offset_top = -25.999996
+offset_right = 807.0
+offset_bottom = 674.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(250, 500)
+texture = ExtResource("4_jrvru")

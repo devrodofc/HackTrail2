@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://cnklscr62qut2"]
+
+[ext_resource type="Script" uid="uid://bwqowu3olpoms" path="res://gameplay/lore/final_scene/make_your_choice.gd" id="1_d5i44"]
+[ext_resource type="Texture2D" uid="uid://cuqfieyu4lgln" path="res://assets/sprites/backgrounds/fundo_escola.png" id="2_ldpnu"]
+[ext_resource type="Texture2D" uid="uid://cfbtblums2j8m" path="res://assets/sprites/npcs/leozin/leozin.png" id="3_ct4us"]
+[ext_resource type="Texture2D" uid="uid://c3d5lbb2hr0km" path="res://assets/sprites/npcs/nathan/nathan2.png" id="4_0r0v5"]
+[ext_resource type="Texture2D" uid="uid://dv5sj1eb7oeck" path="res://assets/sprites/npcs/lusquinha/lusquinha3.png" id="5_1mgob"]
+
+[node name="MakeYourChoice" type="Control" unique_id=490720875 node_paths=PackedStringArray("lusquinha_btn", "nathan_btn", "leozin_btn", "result_container", "result_label", "restart_btn")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_d5i44")
+lusquinha_btn = NodePath("LusquinhaBtn")
+nathan_btn = NodePath("NathanBtn")
+leozin_btn = NodePath("LeozinBtn")
+result_container = NodePath("ResultContainer")
+result_label = NodePath("ResultContainer/MarginContainer/VBoxContainer/ResultLabel")
+restart_btn = NodePath("ResultContainer/MarginContainer/VBoxContainer/RestartBtn")
+
+[node name="Background" type="TextureRect" parent="." unique_id=2106568993]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+offset_right = 1280.0
+offset_bottom = 784.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ldpnu")
+expand_mode = 1
+
+[node name="LeozinBtn" type="TextureButton" parent="." unique_id=1201047944]
+texture_filter = 1
+layout_mode = 0
+offset_left = 800.0
+offset_right = 1300.0
+offset_bottom = 562.0
+pivot_offset = Vector2(250, 500)
+texture_normal = ExtResource("3_ct4us")
+
+[node name="NathanBtn" type="TextureButton" parent="." unique_id=365323284]
+texture_filter = 1
+layout_mode = 0
+offset_left = 429.0
+offset_top = 106.0
+offset_right = 929.0
+offset_bottom = 606.0
+pivot_offset = Vector2(250, 500)
+texture_normal = ExtResource("4_0r0v5")
+
+[node name="LusquinhaBtn" type="TextureButton" parent="." unique_id=1330919093]
+texture_filter = 1
+layout_mode = 0
+offset_left = 60.0
+offset_top = 30.0
+offset_right = 560.0
+offset_bottom = 530.0
+pivot_offset = Vector2(250, 500)
+texture_normal = ExtResource("5_1mgob")
+
+[node name="ResultContainer" type="ColorRect" parent="." unique_id=1634668441]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 370.0
+offset_right = 1105.0
+offset_bottom = 603.0
+color = Color(0.33513373, 0.60861397, 0.44694144, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ResultContainer" unique_id=1652500186]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -29.0
+offset_right = 66.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ResultContainer/MarginContainer" unique_id=1276018026]
+layout_mode = 2
+
+[node name="ResultLabel" type="Label" parent="ResultContainer/MarginContainer/VBoxContainer" unique_id=964773138]
+layout_mode = 2
+
+[node name="RestartBtn" type="Button" parent="ResultContainer/MarginContainer/VBoxContainer" unique_id=530654162]
+layout_mode = 2
+text = "REINICIAR JOGO"

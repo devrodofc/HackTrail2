@@ -23,13 +23,14 @@ var is_game_active: bool = true
 var countdown_timer: SceneTreeTimer = null
 
 func _ready() -> void:
-	main_layout.modulate.a = 0.0 
+	if main_layout:
+		main_layout.modulate.a = 0.0
 	
 	approve_btn.pressed.connect(_on_approve_pressed)
 	reject_btn.pressed.connect(_on_reject_pressed)
 	hack_btn.pressed.connect(_on_hack_pressed)
 	
-	current_tasks = CodeDB.get_randomized_tasks(GameManager.current_day)
+	current_tasks = CodeDB.get_tasks_for_day(GameManager.current_day)
 	
 	if current_tasks.size() > 0:
 		current_task_index = 0
