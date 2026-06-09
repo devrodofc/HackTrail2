@@ -20,7 +20,7 @@ func _ready() -> void:
 	
 	await get_tree().create_timer(1.0).timeout
 	# Chama o diálogo do Nathan
-	EventBus.dialogue_requested.emit("interrogation_day2")
+	EventBus.dialogue_requested.emit("nathan_intro")
 
 func _set_initial_state(sprite: TextureRect) -> void:
 	if sprite:
